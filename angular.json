@@ -202,6 +202,42 @@
           }
         }
       }
+    },
+    "account-feature-api": {
+      "root": "libs/account/feature/api",
+      "sourceRoot": "libs/account/feature/api/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/api/tsconfig.lib.json",
+              "libs/account/feature/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/account/feature/api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/api/jest.config.js",
+            "tsConfig": "libs/account/feature/api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/account/feature/api",
+            "tsConfig": "libs/account/feature/api/tsconfig.lib.json",
+            "packageJson": "libs/account/feature/api/package.json",
+            "main": "libs/account/feature/api/src/index.ts",
+            "assets": ["libs/account/feature/api/*.md"]
+          }
+        }
+      }
     }
   },
   "cli": {

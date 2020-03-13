@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@wws/account/feature/api": ["libs/account/feature/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

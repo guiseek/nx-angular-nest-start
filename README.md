@@ -1,5 +1,25 @@
 # Wws
 
+
+```bash
+ng generate @nrwl/node:library --name=api --directory=account/feature --publishable --tags=scope:account,type:feature
+
+ng generate @nestjs/schematics:module --name=account-feature-api --path=src/lib --sourceRoot=libs/account/feature/api --flat=true
+
+ng generate @nestjs/schematics:controller --name=auth --path=src/lib/controllers --sourceRoot=libs/account/feature/api --flat=true
+
+ng generate @nestjs/schematics:controller --name=users --path=src/lib/controllers --sourceRoot=libs/account/feature/api --flat=true
+
+ng generate @nestjs/schematics:service --name=users --path=src/lib/services --sourceRoot=libs/account/feature/api --flat=true
+ng generate @nestjs/schematics:service --name=users --path=src/lib/servicces --sourceRoot=libs/account/feature/api --flat=true
+ng generate @nestjs/schematics:service --name=auth-mailer --path=src/lib/services --sourceRoot=libs/account/feature/api --flat=true
+
+typeorm entity:create --dir libs/account/feature/api/src/lib/entities --name user
+
+
+```
+
+
 This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
