@@ -65,15 +65,18 @@ ng generate @schematics/angular:component --name=dialogs/forgot-password --proje
 ng generate @schematics/angular:component --name=dialogs/reset-password --project=account-feature-shared-auth --style=scss --export --type=Dialog
 ```
 
-## Auth elements
-
+## Common Util Browser
 ```bash
-ng generate @nrwl/angular:library --name=auth-elements --directory=shared/auth --prefix=custom --publishable --simpleModuleName --tags=scope:shared,type:ui
-ng generate @schematics/angular:component --name=login-form --project=shared-auth-auth-elements --changeDetection=OnPush --export --type=Element --viewEncapsulation=Native
+ng generate @nrwl/workspace:library --name=browser --directory=common/util --tags=shared:util
+
+ng generate @schematics/angular:class --name=database/database --project=common-util-browser
+
+touch libs/common/util/browser/src/lib/database/databaase.config.ts
 ```
 
 
-This project was generated using [Nx](https://nx.dev).
+
+<!-- This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
 
@@ -154,4 +157,4 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
 ## Further help
 
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+Visit the [Nx Documentation](https://nx.dev/angular) to learn more. -->

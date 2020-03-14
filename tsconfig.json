@@ -31,7 +31,8 @@
       "@wws/common/ui/dialog": ["libs/common/ui/dialog/src/index.ts"],
       "@wws/account/feature/shared/auth": [
         "libs/account/feature/shared/auth/src/index.ts"
-      ]
+      ],
+      "@wws/common/util/browser": ["libs/common/util/browser/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

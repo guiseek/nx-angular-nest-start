@@ -1,14 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IForgotPassword, ILogin, IResetPassword } from '@wws/api-interfaces';
+import { Database } from '@wws/common/util/browser';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private db: Database,
+    private http: HttpClient
+  ) { }
 
   login(credentials: ILogin) {
-    return this.http.post('/api/auth/login', credentials);
+    return this.http.post('/api/auth/login', credentials)
+      .pipe(
+        tap((payload) => {
+          this.db.put('auth', payload, 'payload');
+        })
+      )
   }
 
   profile() {
