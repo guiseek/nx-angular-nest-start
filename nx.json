@@ -44,6 +44,9 @@
     },
     "common-ui-dialog": {
       "tags": ["common:ui"]
+    },
+    "account-feature-shared-auth": {
+      "tags": ["feature:shared"]
     }
   }
 }

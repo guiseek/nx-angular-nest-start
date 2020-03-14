@@ -1,7 +1,12 @@
-<p>account works!</p>
+<div class="text-center">
+  <button class="btn btn-green" [disabled]="(login$ | async) === null" type="button" (click)="login()">Login</button>
 
-<button type="button" (click)="open(loginDialog)">Login</button>
+  <button class="btn btn-purple" [disabled]="(forgot$ | async) === null" type="button" (click)="forgot()">Esqueci a
+    senha</button>
 
-<ng-template #loginDialog>
-  <custom-login-form action="/api/auth/login" (isLogged)="onLogged($event)"></custom-login-form>
-</ng-template>
+  <button class="btn btn-blue" [disabled]="(reset$ | async) === null" type="button" (click)="reset()">Configurar
+    senha</button>
+
+  <hr>
+
+</div>

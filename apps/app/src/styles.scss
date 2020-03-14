@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/cdk/overlay-prebuilt.css';
+
+@import 'styles/theme.scss';
+
+@import 'styles/forms.scss';
+@import 'styles/fonts.scss';
+@import 'styles/buttons.scss';
+@import 'styles/grid.scss';
+@import 'styles/scrollbar.scss';
+@import 'styles/helpers.scss';

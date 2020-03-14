@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, MinLength, MaxLength, IsEmail } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
 
 export class ForgotPasswordDto {
   @IsNotEmpty()
@@ -7,8 +7,6 @@ export class ForgotPasswordDto {
   @IsEmail({ require_tld: false }, { always: true })
   email: string;
 
-  @IsString({ always: true })
-  @MinLength(4, { always: true })
-  @MaxLength(255, { always: true })
+  @IsOptional({ always: true })
   lastPassword?: string;
 }

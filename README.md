@@ -54,6 +54,17 @@ ng generate @schematics/angular:service --name=services/user --project=account-f
 ng generate @nrwl/angular:library --name=dialog --style=scss --directory=common/ui --tags=common:ui
 ```
 
+## Account Feature Shared Auth
+```bash
+ng generate @nrwl/angular:library --name=auth --style=scss --directory=account/feature/shared --prefix=wws-auth --tags=feature:shared
+
+ng generate @schematics/angular:component --name=dialogs/login --project=account-feature-shared-auth --style=scss --export --type=Dialog
+
+ng generate @schematics/angular:component --name=dialogs/forgot-password --project=account-feature-shared-auth --style=scss --export --type=Dialog
+
+ng generate @schematics/angular:component --name=dialogs/reset-password --project=account-feature-shared-auth --style=scss --export --type=Dialog
+```
+
 ## Auth elements
 
 ```bash
