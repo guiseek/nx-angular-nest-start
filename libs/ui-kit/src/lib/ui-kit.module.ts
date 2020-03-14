@@ -6,14 +6,10 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Dialog } from './dialog/dialog';
 import { DialogConfig } from './dialog/dialog-config';
-import {
-  DIALOG_CONFIG,
-  DIALOG_CONTAINER,
-  DIALOG_REF,
-  WWS_DIALOG_SCROLL_STRATEGY_PROVIDER
-} from './dialog/dialog-injectors';
+import { DIALOG_CONFIG, DIALOG_CONTAINER, DIALOG_REF, WWS_DIALOG_SCROLL_STRATEGY_PROVIDER } from './dialog/dialog-injectors';
 import { DialogRef } from './dialog/dialog-ref';
 import { DialogContainer } from './dialog/dialog.container';
+import { FlipComponent } from './flip/flip.component';
 import { FormatCellPipe } from './table/pipes/format-cell.pipe';
 import { TableComponent } from './table/table/table.component';
 
@@ -25,8 +21,8 @@ import { TableComponent } from './table/table/table.component';
     PortalModule,
     A11yModule
   ],
-  exports: [PortalModule, TableComponent, DialogContainer],
-  declarations: [TableComponent, FormatCellPipe, DialogContainer],
+  exports: [PortalModule, TableComponent, DialogContainer, FlipComponent],
+  declarations: [TableComponent, FormatCellPipe, DialogContainer, FlipComponent],
   providers: [
     Dialog,
     DatePipe,

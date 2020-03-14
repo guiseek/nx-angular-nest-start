@@ -1,35 +1,35 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  AuthSuccessResponse,
-  IForgotPassword,
-  ILogin,
-  IResetPassword
-} from '@wws/api-interfaces';
+import { AuthSuccessResponse, IForgotPassword, ILogin, IRegister, IResetPassword } from '@wws/api-interfaces';
 import { Database } from '@wws/common/util/browser';
-import { tap } from 'rxjs/operators';
+import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  constructor(private db: Database, private http: HttpClient) {}
+  constructor(private db: Database, private http: HttpClient) { }
 
   login(credentials: ILogin) {
     return this.http
       .post('/api/auth/login', credentials)
-      .pipe(tap((response: AuthSuccessResponse) => this.setSession(response)));
+      .pipe(
+        map((response: AuthSuccessResponse) =>
+          from(this.setSession(response))));
   }
-
+  register(data: IRegister) {
+    return this.http.post('/api/auth/register', data);
+  }
   get token() {
     return window.localStorage.getItem('token');
   }
 
   setSession({ access_token, payload }) {
-    this.db.put('auth', payload, 'payload');
     window.localStorage.setItem('token', access_token);
+    return this.db.put('auth', payload, 'payload');
   }
   clear() {
     window.localStorage.removeItem('token');
-    this.db.delete('auth', 'payload');
+    return this.db.delete('auth', 'payload');
   }
 
   profile() {
@@ -42,5 +42,9 @@ export class AuthService {
 
   resetPassword(credentials: IResetPassword) {
     return this.http.post('/api/reset-password', credentials);
+  }
+
+  signOut() {
+    return this.clear();
   }
 }

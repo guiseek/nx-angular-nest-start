@@ -1,0 +1,17 @@
+.wws-flip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  .content-wrapper {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}

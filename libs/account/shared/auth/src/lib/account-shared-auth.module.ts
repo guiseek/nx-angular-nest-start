@@ -5,10 +5,11 @@ import { ForgotPasswordDialog } from './dialogs/forgot-password/forgot-password.
 import { LoginDialog } from './dialogs/login/login.dialog';
 import { ResetPasswordDialog } from './dialogs/reset-password/reset-password.dialog';
 import { LoginForm } from './forms/login/login.form';
+import { RegisterForm } from './forms/register/register.form';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
-  declarations: [LoginDialog, ForgotPasswordDialog, ResetPasswordDialog, LoginForm],
-  exports: [LoginDialog, ForgotPasswordDialog, ResetPasswordDialog, LoginForm]
+  declarations: [LoginDialog, ForgotPasswordDialog, ResetPasswordDialog, LoginForm, RegisterForm],
+  exports: [LoginDialog, ForgotPasswordDialog, ResetPasswordDialog, LoginForm, RegisterForm]
 })
 export class AccountSharedAuthModule {}

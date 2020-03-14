@@ -105,3 +105,12 @@
 .btn-orange-outline {
   @include btn-outline('orange');
 }
+.btn-green-outline {
+  @include btn-outline('green');
+}
+.btn-blue-outline {
+  @include btn-outline('blue');
+}
+.btn-red-outline {
+  @include btn-outline('red');
+}

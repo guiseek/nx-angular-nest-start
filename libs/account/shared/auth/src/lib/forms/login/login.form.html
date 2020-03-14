@@ -1,41 +1,31 @@
-<form [formGroup]="this" (ngSubmit)="action.emit(value)">
+<form class="box" [formGroup]="this" (ngSubmit)="action.emit(value)">
   <fieldset>
     <legend>Login</legend>
 
     <hr />
-    <div class="spacer">
-      <div class="form-field">
+    <div class="row">
+      <div class="col col-fill">
         <label for="email">Email</label>
-        <input
-          class="input"
-          placeholder="nome@provedor.com.br"
-          type="email"
-          id="email"
-          formControlName="username"
-          required
-        />
-      </div>
-      <div class="form-field">
-        <label for="password">Senha</label>
-        <input
-          class="input"
-          type="password"
-          id="password"
-          formControlName="password"
-          required
-        />
+        <input class="input" placeholder="nome@provedor.com.br" type="email" id="email" formControlName="username"
+          required />
       </div>
     </div>
-    <div class="row flex-right">
+    <div class="row">
+      <div class="col col-fill">
+        <label for="password">Senha</label>
+        <input class="input" type="password" id="password" formControlName="password" required />
+      </div>
+    </div>
+    <div class="row flex-edges">
+      <div class="col">
+        <ng-content select="button"></ng-content>
+      </div>
       <!-- <button class="btn" type="button" (click)="onCancel()">Cancelar</button> -->
-
-      <button
-        class="btn btn-orange-outline"
-        [disabled]="invalid"
-        type="submit"
-      >
-        Login
-      </button>
+      <div class="col align-end">
+        <button class="btn btn-green-outline" [disabled]="invalid" type="submit">
+          Login
+        </button>
+      </div>
     </div>
   </fieldset>
 </form>

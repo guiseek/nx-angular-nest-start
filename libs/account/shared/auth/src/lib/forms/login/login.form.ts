@@ -19,6 +19,9 @@ export class LoginForm extends FormGroup implements OnInit {
     })
   }
 
+  onActivate() {
+  }
+
   ngOnInit(): void {
     if (!!this.email) {
       this.get('username').setValue(this.email);

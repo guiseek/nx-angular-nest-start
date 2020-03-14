@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { ForgotPasswordDto, User, UsersService } from '@wws/account/api/users';
+import { CreateUserDto, ForgotPasswordDto, User, UsersService } from '@wws/account/api/users';
 import { AuthSuccessResponse } from '@wws/api-interfaces';
 import { AuthMailerService } from './auth-mailer.service';
 
@@ -17,7 +17,8 @@ export class AuthService {
       where: { email },
       select: ['id', 'email', 'name.first', 'password']
     });
-    console.log(user);
+    console.log('src: ', pass, user);
+    console.log(user.validatePassword(pass));
 
     if (user && user.validatePassword(pass)) {
       // const { id, email, name } = user;
@@ -37,6 +38,10 @@ export class AuthService {
       access_token: this.jwtService.sign(payload)
     };
   }
+  register(data: CreateUserDto) {
+    return this.usersService.create(data);
+  }
+
   async getUser(id: number) {
     return await this.usersService.findOne({
       where: { id }

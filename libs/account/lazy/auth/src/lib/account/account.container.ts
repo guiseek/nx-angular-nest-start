@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ForgotPasswordDialog, LoginDialog, ResetPasswordDialog } from '@wws/account/shared/auth';
+import { ForgotPasswordDialog, LoginDialog, LoginForm, RegisterForm, ResetPasswordDialog } from '@wws/account/shared/auth';
 import { AuthService } from '@wws/account/shared/data-access';
-import { ILogin } from '@wws/api-interfaces';
+import { ILogin, IRegister } from '@wws/api-interfaces';
 import { Dialog } from '@wws/ui-kit';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -16,6 +16,12 @@ export class AccountContainer {
   login$: Observable<any> = of(false);
   forgot$: Observable<any> = of(false);
   reset$: Observable<any> = of(false);
+
+  flipped = false;
+  tabs = [
+    { name: 'login', label: 'Login', componentClass: LoginForm },
+    { name: 'register', label: 'Register', componentClass: RegisterForm }
+  ];
 
   constructor(
     public dialog: Dialog,
@@ -31,6 +37,19 @@ export class AccountContainer {
           this.router.navigateByUrl('/');
         }
       })
+  }
+  onRegister(data: IRegister) {
+    console.log(data);
+    this.auth.register(data)
+    .subscribe(auth => {
+      console.log(auth);
+
+      if (!!auth) {
+        this.flipped = false;
+        // this.router.navigateByUrl('/');
+      }
+    })
+
   }
   login() {
     this.login$ = this.dialog

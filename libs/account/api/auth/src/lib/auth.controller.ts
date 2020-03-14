@@ -1,14 +1,7 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Request,
-  UseGuards
-} from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
-import { ForgotPasswordDto } from '@wws/account/api/users';
+import { CreateUserDto, ForgotPasswordDto } from '@wws/account/api/users';
 import { AuthService } from './auth.service';
 import { ResetPasswordDto } from './dtos/reset-password.dto';
 
@@ -23,6 +16,16 @@ export class AuthController {
     console.log(req.user);
 
     return this.authService.login(req.user);
+  }
+
+  @Post('auth/register')
+  async register(@Body() dto: CreateUserDto) {
+    console.log(dto);
+    try {
+      return await this.authService.register(dto);
+    } catch (err) {
+      throw new BadRequestException(err.message);
+    }
   }
 
   @UseGuards(AuthGuard('jwt'))
