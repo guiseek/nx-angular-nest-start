@@ -239,49 +239,6 @@
         }
       }
     },
-    "shared-auth-auth-elements": {
-      "projectType": "library",
-      "root": "libs/shared/auth/auth-elements",
-      "sourceRoot": "libs/shared/auth/auth-elements/src",
-      "prefix": "custom",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/shared/auth/auth-elements/tsconfig.lib.json",
-            "project": "libs/shared/auth/auth-elements/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/shared/auth/auth-elements/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/auth/auth-elements/tsconfig.lib.json",
-              "libs/shared/auth/auth-elements/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/shared/auth/auth-elements/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/auth/auth-elements/jest.config.js",
-            "tsConfig": "libs/shared/auth/auth-elements/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/shared/auth/auth-elements/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {}
-    },
     "account-feature-lazy-users": {
       "projectType": "library",
       "root": "libs/account/feature/lazy/users",

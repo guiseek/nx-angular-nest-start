@@ -27,9 +27,6 @@
     "account-feature-api": {
       "tags": ["scope:account", "type:feature"]
     },
-    "shared-auth-auth-elements": {
-      "tags": ["scope:shared", "type:ui"]
-    },
     "account-feature-lazy-users": {
       "tags": ["feature:lazy"]
     },
