@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccountFeatureSharedAuthModule } from '@wws/account/feature/shared/auth';
 import { AccountFeatureSharedDataAccessModule } from '@wws/account/feature/shared/data-access';
-import { CommonUiDialogModule } from '@wws/common/ui/dialog';
+import { UiKitModule } from '@wws/ui-kit';
 import { AccountContainer } from './account/account.container';
 
 @NgModule({
   imports: [
     CommonModule,
-    CommonUiDialogModule,
+    UiKitModule,
     AccountFeatureSharedDataAccessModule,
     AccountFeatureSharedAuthModule,
     RouterModule.forChild([

@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { CommonUiTableModule } from './common-ui-table.module';
+import { UiKitModule } from './ui-kit.module';
 
-describe('CommonUiTableModule', () => {
+describe('UiKitModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CommonUiTableModule]
+      imports: [UiKitModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(CommonUiTableModule).toBeDefined();
+    expect(UiKitModule).toBeDefined();
   });
 });

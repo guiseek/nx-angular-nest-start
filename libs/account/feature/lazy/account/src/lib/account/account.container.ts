@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ForgotPasswordDialog, LoginDialog, ResetPasswordDialog } from '@wws/account/feature/shared/auth';
-import { Dialog } from '@wws/common/ui/dialog';
+import { Dialog } from '@wws/ui-kit';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 

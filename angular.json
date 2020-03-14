@@ -21,8 +21,13 @@
             "polyfills": "apps/app/src/polyfills.ts",
             "tsConfig": "apps/app/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets"],
-            "styles": ["apps/app/src/styles.scss"],
+            "assets": [
+              "apps/app/src/favicon.ico",
+              "apps/app/src/assets"
+            ],
+            "styles": [
+              "apps/app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +86,10 @@
               "apps/app/tsconfig.app.json",
               "apps/app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app/**"
+            ]
           }
         },
         "test": {
@@ -116,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/app-e2e/**"]
+            "tsConfig": [
+              "apps/app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/app-e2e/**"
+            ]
           }
         }
       }
@@ -135,7 +148,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -164,7 +179,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**"
+            ]
           }
         },
         "test": {
@@ -190,7 +208,10 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interfaces/**"
+            ]
           }
         },
         "test": {
@@ -216,7 +237,10 @@
               "libs/account/feature/api/tsconfig.lib.json",
               "libs/account/feature/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/account/feature/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/api/**"
+            ]
           }
         },
         "test": {
@@ -234,7 +258,9 @@
             "tsConfig": "libs/account/feature/api/tsconfig.lib.json",
             "packageJson": "libs/account/feature/api/package.json",
             "main": "libs/account/feature/api/src/index.ts",
-            "assets": ["libs/account/feature/api/*.md"]
+            "assets": [
+              "libs/account/feature/api/*.md"
+            ]
           }
         }
       }
@@ -322,7 +348,10 @@
               "libs/shared/data-access/tsconfig.lib.json",
               "libs/shared/data-access/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/data-access/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access/**"
+            ]
           }
         },
         "test": {
@@ -367,38 +396,6 @@
         }
       },
       "schematics": {}
-    },
-    "common-ui-dialog": {
-      "projectType": "library",
-      "root": "libs/common/ui/dialog",
-      "sourceRoot": "libs/common/ui/dialog/src",
-      "prefix": "wws",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/common/ui/dialog/tsconfig.lib.json",
-              "libs/common/ui/dialog/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/common/ui/dialog/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/common/ui/dialog/jest.config.js",
-            "tsConfig": "libs/common/ui/dialog/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/common/ui/dialog/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
     },
     "account-feature-shared-auth": {
       "projectType": "library",
@@ -448,7 +445,10 @@
               "libs/common/util/browser/tsconfig.lib.json",
               "libs/common/util/browser/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/common/util/browser/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/common/util/browser/**"
+            ]
           }
         },
         "test": {
@@ -458,38 +458,6 @@
             "tsConfig": "libs/common/util/browser/tsconfig.spec.json",
             "passWithNoTests": true
           }
-        }
-      }
-    },
-    "common-ui-table": {
-      "projectType": "library",
-      "root": "libs/common/ui/table",
-      "sourceRoot": "libs/common/ui/table/src",
-      "prefix": "wws",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/common/ui/table/tsconfig.lib.json",
-              "libs/common/ui/table/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/common/ui/table/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/common/ui/table/jest.config.js",
-            "tsConfig": "libs/common/ui/table/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/common/ui/table/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
         }
       }
     },
@@ -576,7 +544,10 @@
               "libs/common/util/http/tsconfig.lib.json",
               "libs/common/util/http/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/common/util/http/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/common/util/http/**"
+            ]
           }
         },
         "test": {
@@ -586,6 +557,41 @@
             "tsConfig": "libs/common/util/http/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "ui-kit": {
+      "projectType": "library",
+      "root": "libs/ui-kit",
+      "sourceRoot": "libs/ui-kit/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-kit/tsconfig.lib.json",
+              "libs/ui-kit/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-kit/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-kit/jest.config.js",
+            "tsConfig": "libs/ui-kit/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui-kit/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

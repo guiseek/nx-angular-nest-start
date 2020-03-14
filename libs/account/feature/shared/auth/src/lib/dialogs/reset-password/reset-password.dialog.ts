@@ -2,7 +2,7 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@wws/account/feature/shared/data-access';
 import { IForgotPasswordResponse } from '@wws/api-interfaces';
-import { DialogRef, DIALOG_DATA } from '@wws/common/ui/dialog';
+import { DialogRef, DIALOG_DATA } from '@wws/ui-kit';
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@wws/account/feature/shared/data-access';
-import { DialogRef } from '@wws/common/ui/dialog';
+import { DialogRef } from '@wws/ui-kit';
 import { Subscription } from 'rxjs';
 
 @Component({

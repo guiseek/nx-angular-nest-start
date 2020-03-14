@@ -1,6 +1,6 @@
 import { Direction } from '@angular/cdk/bidi';
 import { ComponentType } from '@angular/cdk/portal';
-import { DialogContainer } from './dialog/dialog.container';
+import { DialogContainer } from './dialog.container';
 import { ViewContainerRef } from '@angular/core';
 
 export type DialogRole = 'dialog' | 'alertdialog';

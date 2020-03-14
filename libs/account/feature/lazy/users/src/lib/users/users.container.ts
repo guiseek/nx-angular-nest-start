@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '@wws/account/feature/shared/data-access';
 import { IUser } from '@wws/api-interfaces';
-import { TableConfig } from '@wws/common/ui/table';
+import { TableConfig } from '@wws/ui-kit';
 import { Subject } from 'rxjs';
 
 @Component({

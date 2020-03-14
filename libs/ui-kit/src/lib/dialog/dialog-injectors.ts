@@ -3,7 +3,7 @@ import { ComponentType, Overlay, ScrollStrategy } from '@angular/cdk/overlay';
 import { InjectionToken } from '@angular/core';
 import { DialogConfig } from './dialog-config';
 import { DialogRef } from './dialog-ref';
-import { DialogContainer } from './dialog/dialog.container';
+import { DialogContainer } from './dialog.container';
 
 /** Token de injeção para a ScrollStrategy do Diálogo. */
 export const DIALOG_SCROLL_STRATEGY =

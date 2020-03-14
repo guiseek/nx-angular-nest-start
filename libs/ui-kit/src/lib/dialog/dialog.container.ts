@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentRef, ElementRef, EmbeddedViewRef, HostBinding, Inject, OnDestroy, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
-import { DialogConfig } from './../dialog-config';
+import { DialogConfig } from './dialog-config';
 
 
 export function throwDialogContentAlreadyAttachedError() {
