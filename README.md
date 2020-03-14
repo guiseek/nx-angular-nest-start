@@ -1,5 +1,8 @@
 # Wws
 
+```bash
+ng generate @nrwl/node:library --name=auth --directory=account/api
+```
 
 ```bash
 ng generate @nrwl/node:library --name=api --directory=account/feature --publishable --tags=scope:account,type:feature

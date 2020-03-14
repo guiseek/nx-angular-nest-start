@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AccountFeatureApiModule } from '@wws/account/feature/api';
+import { AccountApiAuthModule } from '@wws/account/api/auth';
+import { AccountApiCompaniesModule } from '@wws/account/api/companies';
+import { AccountApiUsersModule } from '@wws/account/api/users';
 import configuration from '../config/configuration';
 import { environment } from '../environments/environment';
 import { AppController } from './app.controller';
@@ -16,7 +18,9 @@ import { AppService } from './app.service';
       envFilePath: environment.production ? '.env' : '.development.env'
     }),
     TypeOrmModule.forRoot(configuration().database),
-    AccountFeatureApiModule
+    AccountApiAuthModule,
+    AccountApiUsersModule,
+    AccountApiCompaniesModule,
   ],
   controllers: [AppController],
   providers: [AppService]
