@@ -1,6 +1,7 @@
+import { ICompany } from '@wws/api-interfaces';
 import { Type } from 'class-transformer';
 import * as crypto from 'crypto';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ConfirmationDto, NameDto, ResetPasswordDto } from '../dtos';
 
 export class ResetPassword {
@@ -70,4 +71,8 @@ export class User {
   validatePassword(password: string) {
     return this.hashPassword(password) === this.password;
   }
+
+  @ManyToMany('Company', 'users')
+  companies?: ICompany[];
+
 }

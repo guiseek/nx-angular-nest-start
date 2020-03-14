@@ -11,7 +11,7 @@ export class HttpBackendService<T = any> {
   protected prefix: string;
   protected endpoint: string = '';
   constructor(
-    private http: HttpClient,
+    protected http: HttpClient,
     @Inject(DATA_ACCESS_CONFIG) private config: DataAccessConfig
   ) {
     this.prefix = config.apiPrefix;

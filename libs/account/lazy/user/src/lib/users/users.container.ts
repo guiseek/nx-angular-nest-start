@@ -36,6 +36,8 @@ export class UsersContainer implements OnInit {
 
   ngOnInit(): void {
     this.clicked.subscribe(console.log);
+    this.userService.myCompanies()
+      .subscribe(console.log)
   }
 
   onCreateUser(data: IUser) {

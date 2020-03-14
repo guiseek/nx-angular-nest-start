@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindOneOptions, Repository } from 'typeorm';
+import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { CreateCompanyDto, UpdateCompanyDto } from './dtos';
 import { Company } from './entities/company';
 
@@ -11,13 +11,16 @@ export class CompaniesService {
   ) {}
 
   create(data: CreateCompanyDto) {
-    return this.repo.insert(data);
+    return this.repo.save(data);
   }
   findOne(options: FindOneOptions) {
     return this.repo.findOne(options);
   }
-  find() {
-    return this.repo.find();
+  findMany(options: FindManyOptions) {
+    return this.repo.find(options);
+  }
+  find(options?: FindManyOptions) {
+    return this.repo.find(options);
   }
   update(id: number, data: UpdateCompanyDto) {
     return this.repo.update(id, data);

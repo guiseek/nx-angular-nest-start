@@ -27,6 +27,11 @@ async function bootstrap() {
     .setDescription('Workspace Angular NestJS Start Template')
     .setVersion('1.0')
     .addTag('nx')
+    .addBearerAuth({
+      type: 'http',
+      scheme: 'bearer',
+      bearerFormat: 'Authorization'
+    })
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);

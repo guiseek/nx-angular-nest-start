@@ -1,14 +1,7 @@
-import {
-  BadRequestException,
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Post,
-  Put
-} from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+import { User } from '@wws/account/api/auth';
+import { User as UserEntity } from '@wws/account/api/users';
 import { CompaniesService } from './companies.service';
 import { CreateCompanyDto, UpdateCompanyDto } from './dtos';
 
@@ -27,12 +20,24 @@ export class CompaniesController {
   }
   @Get()
   get() {
-    return this.service.find();
+    return this.service.find({
+      relations: ['users']
+    });
   }
 
   @Get(':id')
   getOne(@Param('id') id: number) {
     return this.service.findOne({ where: { id }, relations: ['users'] });
+  }
+
+  @Get('my')
+  my(@User() user: UserEntity) {
+
+    console.log('my: ', user);
+
+    return this.service.findMany({
+    })
+
   }
 
   @Delete(':id')

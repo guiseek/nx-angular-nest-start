@@ -1,4 +1,65 @@
-<p>company works!</p>
-<button type="button" class="btn btn-red-outline" (click)="signOut()">
-  Sair
-</button>
+<header class="row flex-right">
+  <button type="button" class="btn btn-red-outline" (click)="signOut()">
+    Sair
+  </button>
+</header>
+
+<div class="row">
+  <div class="box col col-fill">
+      <wws-table [config]="tableConfig"></wws-table>
+    </div>
+    <div class="box col col-4">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <fieldset>
+          <legend>Empresa</legend>
+
+          <hr />
+
+          <div class="row">
+            <div class="col col-fill">
+              <label for="name">Nome</label>
+              <input
+                class="input"
+                type="name"
+                id="name"
+                formControlName="name"
+                required
+              />
+            </div>
+            <div class="col col-fill">
+              <label for="domain">Domínio</label>
+              <input class="input" type="text" id="domain" formControlName="domain" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-fill">
+              <label for="description">Descrição</label>
+              <textarea class="textarea" name="description" id="description" formControlName="description"></textarea>
+            </div>
+          </div>
+          <div class="row flex-edges">
+            <div class="col">
+
+              <ng-content select="button"></ng-content>
+              <!-- <button class="btn" type="button" (click)="reset()">
+                Limpar
+              </button> -->
+            </div>
+            <div class="col align-end">
+              <button
+                class="btn btn-green-outline"
+                [disabled]="form.invalid"
+                type="submit"
+              >
+                Salvar
+              </button>
+            </div>
+          </div>
+        </fieldset>
+
+        <pre>{{ form.value | json }}</pre>
+      </form>
+
+    </div>
+  </div>

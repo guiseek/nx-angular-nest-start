@@ -1,3 +1,5 @@
+import { ICompany } from './company.interfaces';
+
 export interface IResetPassword {
   token: string;
   expires: Date;
@@ -20,4 +22,5 @@ export interface IUser {
   name: IName;
   confirmation: IConfirmation;
   resetPassword: IResetPassword;
+  companies?: ICompany[];
 }
