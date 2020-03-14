@@ -44,9 +44,14 @@ ng generate @schematics/angular:service --name=services/http-backend --project=s
 ```bash
 ng generate @nrwl/angular:library --name=data-access --directory=account/feature/shared --tags=feature:shared:data-access
 
-ng generate @schematics/angular:service --name=services/auth-service --project=account-feature-shared-data-access
+ng generate @schematics/angular:service --name=services/auth --project=account-feature-shared-data-access
 
-ng generate @schematics/angular:service --name=services/user-service --project=account-feature-shared-data-access
+ng generate @schematics/angular:service --name=services/user --project=account-feature-shared-data-access
+```
+
+## Common Ui Dialog
+```bash
+ng generate @nrwl/angular:library --name=dialog --style=scss --directory=common/ui --tags=common:ui
 ```
 
 ## Auth elements

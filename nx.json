@@ -41,6 +41,9 @@
     },
     "account-feature-shared-data-access": {
       "tags": ["feature:shared:data-access"]
+    },
+    "common-ui-dialog": {
+      "tags": ["common:ui"]
     }
   }
 }

@@ -30,7 +30,8 @@
       "@wws/shared/data-access": ["libs/shared/data-access/src/index.ts"],
       "@wws/account/feature/shared/data-access": [
         "libs/account/feature/shared/data-access/src/index.ts"
-      ]
+      ],
+      "@wws/common/ui/dialog": ["libs/common/ui/dialog/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

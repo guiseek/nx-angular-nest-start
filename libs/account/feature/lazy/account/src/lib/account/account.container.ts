@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Dialog } from '@wws/common/ui/dialog';
 
 @Component({
   selector: 'wws-account',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountContainer implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: Dialog) { }
 
   ngOnInit(): void {
   }
@@ -15,6 +16,11 @@ export class AccountContainer implements OnInit {
   onLogged(data) {
     console.log(data);
 
+  }
+
+  open(template: TemplateRef<any>) {
+    this.dialog.openFromTemplate(template)
+      .afterClosed()
   }
 
 }
