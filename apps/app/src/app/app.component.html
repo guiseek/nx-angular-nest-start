@@ -8,6 +8,9 @@
   </ul>
 
 </nav>
-<router-outlet></router-outlet>
+
+<main role="main">
+  <router-outlet></router-outlet>
+</main>
 
 <div>Message: {{ hello$ | async | json }}</div>

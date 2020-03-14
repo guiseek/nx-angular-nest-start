@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '@wws/account/feature/shared/data-access';
-import { IUser } from '@wws/api-interfaces';
-import { Observable } from 'rxjs';
+import { TableConfig } from '@wws/common/ui/table';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'wws-users',
@@ -9,12 +9,21 @@ import { Observable } from 'rxjs';
   styleUrls: ['./users.container.scss']
 })
 export class UsersContainer implements OnInit {
-  users$: Observable<IUser[]>;
-
+  clicked = new Subject();
+  tableConfig: TableConfig = {
+    columns: [
+      { columnDef: 'id', header: '#', cell: (element) => element.id },
+      { columnDef: 'name', header: 'Nome', cell: (element) => element.name.first },
+      { columnDef: 'email', header: 'Email', cell: (element) => element.email },
+      { columnDef: 'isActive', header: 'Status', cell: (element) => element.isActive }
+    ],
+    click: this.clicked,
+    endpoint: '/api/users'
+  }
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.users$ = this.userService.findMany();
+    // this.users$ = this.userService.findMany();
+    this.clicked.subscribe(console.log)
   }
-
 }

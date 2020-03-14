@@ -44,6 +44,12 @@
     },
     "account-feature-shared-auth": {
       "tags": ["feature:shared"]
+    },
+    "common-util-browser": {
+      "tags": ["shared:util"]
+    },
+    "common-ui-table": {
+      "tags": ["common:ui"]
     }
   }
 }
