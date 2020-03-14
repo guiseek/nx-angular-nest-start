@@ -442,6 +442,41 @@
           "styleext": "scss"
         }
       }
+    },
+    "account-feature-shared-auth": {
+      "projectType": "library",
+      "root": "libs/account/feature/shared/auth",
+      "sourceRoot": "libs/account/feature/shared/auth/src",
+      "prefix": "wws-auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/shared/auth/tsconfig.lib.json",
+              "libs/account/feature/shared/auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/shared/auth/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/shared/auth/jest.config.js",
+            "tsConfig": "libs/account/feature/shared/auth/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/account/feature/shared/auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

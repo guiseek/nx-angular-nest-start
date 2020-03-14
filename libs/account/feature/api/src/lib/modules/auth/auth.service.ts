@@ -16,8 +16,9 @@ export class AuthService {
 
   async validateUser(email: string, pass: string) {
     const user = await this.usersService.findOne({
-      where: { email }
+      where: { email }, select: ['id','email','name.first','password']
     });
+    console.log(user);
 
     if (user && user.validatePassword(pass)) {
       const { id, email, name } = user;
@@ -47,7 +48,7 @@ export class AuthService {
           resetPassword.token, dto.email
         )
         return {
-          ...data, resetPassword
+          id: data.id, resetPassword
         }
       }
     } catch (err) {
