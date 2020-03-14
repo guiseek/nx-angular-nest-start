@@ -50,6 +50,15 @@
     },
     "common-ui-table": {
       "tags": ["common:ui"]
+    },
+    "account-feature-lazy-company": {
+      "tags": ["feature:lazy"]
+    },
+    "account-feature-shared-forms": {
+      "tags": ["feature:shared"]
+    },
+    "common-util-http": {
+      "tags": ["shared:util"]
     }
   }
 }

@@ -43,13 +43,13 @@ export function throwDialogContentAlreadyAttachedError() {
 export class DialogContainer extends BasePortalOutlet implements OnDestroy {
   private readonly _document: Document;
 
-  /** Estado da animação da caixa de diálogo. */
+  /** Estado da animação da dialog. */
   _state: 'void' | 'enter' | 'exit' = 'enter';
 
-  /** Elemento que foi focado antes da abertura da caixa de diálogo. Salve isso para restaurar quando fechar. */
+  /** Elemento que foi focado antes da abertura da dialog. Salve isso para restaurar quando fechar. */
   private _elementFocusedBeforeDialogWasOpened: HTMLElement | null = null;
 
-   /** A classe que intercepta e gerencia o foco na caixa de diálogo. */
+   /** A classe que intercepta e gerencia o foco na dialog. */
   private _focusTrap = this._focusTrapFactory.create(this._elementRef.nativeElement);
 
   // @HostBinding é usado na classe, pois espera-se que seja estendido. Desde o decorador @Component
@@ -68,16 +68,16 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
   @HostBinding('attr.tabindex') get _tabindex() { return -1; }
   // tslint:disable:no-host-decorator-in-concrete
 
-  /** O host do portal dentro deste contêiner no qual o conteúdo da caixa de diálogo será carregado. */
+  /** O host do portal dentro deste contêiner no qual o conteúdo da dialog será carregado. */
   @ViewChild(CdkPortalOutlet, {static: true}) _portalHost: CdkPortalOutlet;
 
-  /** Um assunto emitido antes da caixa de diálogo entra na visualização. */
+  /** Um assunto emitido antes da dialog entra na visualização. */
   _beforeEnter: Subject<void> = new Subject();
 
   /** Um assunto emitido após o diálogo entra na visualização. */
   _afterEnter: Subject<void> = new Subject();
 
-  /** Um assunto emitido antes da caixa de diálogo sai da visualização. */
+  /** Um assunto emitido antes da dialog sai da visualização. */
   _beforeExit: Subject<void> = new Subject();
 
   /** Um assunto emitido após o diálogo sai da visualização. */
@@ -118,7 +118,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
     });
   }
 
-  /** Destrua a armadilha de foco para colocar o foco de volta no elemento focado antes da caixa de diálogo ser aberta. */
+  /** Destrua a armadilha de foco para colocar o foco de volta no elemento focado antes da dialog ser aberta. */
   ngOnDestroy() {
     this._focusTrap.destroy();
     this._animationDone.complete();
@@ -126,7 +126,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
 
   /**
    * Anexe um ComponentPortal como conteúdo a este contêiner de diálogo.
-   Portal @param Portal a ser anexado como o conteúdo da caixa de diálogo.
+   Portal @param Portal a ser anexado como o conteúdo da dialog.
    */
   attachComponentPortal<T>(portal: ComponentPortal<T>): ComponentRef<T> {
     if (this._portalHost.hasAttached()) {
@@ -139,7 +139,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
 
   /**
    * Anexe um TemplatePortal como conteúdo a este contêiner de diálogo.
-   Portal @param Portal a ser anexado como o conteúdo da caixa de diálogo.
+   Portal @param Portal a ser anexado como o conteúdo da dialog.
    */
   attachTemplatePortal<C>(portal: TemplatePortal<C>): EmbeddedViewRef<C> {
     if (this._portalHost.hasAttached()) {
@@ -177,7 +177,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
     }
   }
 
-  /** Inicia a animação de saída da caixa de diálogo. */
+  /** Inicia a animação de saída da dialog. */
   _startExiting(): void {
     this._state = 'exit';
 
@@ -186,12 +186,12 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
     this._changeDetectorRef.markForCheck();
   }
 
-  /** Salva uma referência ao elemento focado antes da abertura da caixa de diálogo. */
+  /** Salva uma referência ao elemento focado antes da abertura da dialog. */
   private _savePreviouslyFocusedElement() {
     if (this._document) {
       this._elementFocusedBeforeDialogWasOpened = this._document.activeElement as HTMLElement;
 
-      // Mova o foco imediatamente para a caixa de diálogo para impedir que o usuário acidentalmente
+      // Mova o foco imediatamente para a dialog para impedir que o usuário acidentalmente
       // abrir várias caixas de diálogo ao mesmo tempo. Precisa ser assíncrono, porque o elemento
       // pode não ser focável imediatamente.
       Promise.resolve().then(() => this._elementRef.nativeElement.focus());
@@ -199,18 +199,18 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
   }
 
   /**
-   * Focar automaticamente o primeiro elemento com tabela dentro da caixa de diálogo, se não houver um elemento com tabela,
-   * concentre a caixa de diálogo.
+   * Focar automaticamente o primeiro elemento com tabela dentro da dialog, se não houver um elemento com tabela,
+   * concentre a dialog.
    */
   private _autoFocusFirstTabbableElement() {
     const element = this._elementRef.nativeElement;
 
-    // Se você tentar se concentrar imediatamente, o conteúdo da caixa de diálogo ainda não será
+    // Se você tentar se concentrar imediatamente, o conteúdo da dialog ainda não será
     // pronto nos casos em que a detecção de alterações deve ser executada primeiro. Para lidar com isso, simplesmente
     // aguarde a fila da microtask estar vazia.
     if (this._config.autoFocus) {
       this._focusTrap.focusInitialElementWhenReady().then(hasMovedFocus => {
-        // Se não encontramos nenhum elemento focalizável dentro da caixa de diálogo, foque o
+        // Se não encontramos nenhum elemento focalizável dentro da dialog, foque o
         // container para que o usuário não possa tabular em outros elementos atrás dele.
         if (!hasMovedFocus) {
           element.focus();
@@ -222,7 +222,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
       // Caso contrário, verifique se o foco está no contêiner de diálogo. É possível que um diferente
       // O componente tentou mover o foco enquanto a animação aberta estava em execução. Vejo:
       // https://github.com/angular/components/issues/16215. Observe que queremos apenas fazer isso
-      // se o foco ainda não estiver dentro da caixa de diálogo, porque é possível que o consumidor
+      // se o foco ainda não estiver dentro da dialog, porque é possível que o consumidor
       // desativou o `autoFocus` para mover o foco.
       if (activeElement !== element && !element.contains(activeElement)) {
         element.focus();
@@ -230,7 +230,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
     }
   }
 
-  /** Retorna o foco para o elemento focado antes da caixa de diálogo ser aberta. */
+  /** Retorna o foco para o elemento focado antes da dialog ser aberta. */
   private _returnFocusAfterDialog() {
     const toFocus = this._elementFocusedBeforeDialogWasOpened;
     // Precisamos de uma verificação extra, porque o IE pode definir o `activeElement` como nulo em alguns casos.
@@ -238,7 +238,7 @@ export class DialogContainer extends BasePortalOutlet implements OnDestroy {
       const activeElement = this._document.activeElement;
       const element = this._elementRef.nativeElement;
 
-      // Verifique se o foco ainda está dentro da caixa de diálogo ou no corpo (geralmente porque um
+      // Verifique se o foco ainda está dentro da dialog ou no corpo (geralmente porque um
       // elemento não focalizável como o pano de fundo foi clicado) antes de movê-lo. É possível que
       // o consumidor o moveu antes da animação ser concluída; nesse caso, não devemos
       // faça qualquer coisa.

@@ -1,0 +1,146 @@
+// Container
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  position: relative;
+  width: 100%;
+  @include resp(medium) {
+    width: 85%;
+  }
+  @include resp(xsmall) {
+    width: 90%;
+  }
+}
+
+.section {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  word-wrap: break-word;
+
+  &::after {
+    @include hr-after;
+  }
+}
+
+hr {
+  // border: 0;
+
+  &::after {
+    @include hr-after;
+    top: -0.75rem;
+  }
+}
+
+.box {
+  background-color: rgba($main-background, 0.01);
+  border: 1px solid rgba($primary-light, 0.1);
+  box-shadow: -1px 5px 35px -9px hsla(0, 0%, 0%, 0.2);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  @include resp(xs) {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+//
+// Flexbox
+//
+
+$number-columns: 12;
+
+@mixin create-flex-classes($colName, $breakpoint: 0) {
+  @include resp($min: $breakpoint) {
+    @for $i from 1 through $number-columns {
+      .#{$colName}-#{$i} {
+        flex: 0 0 $i * 100% / $number-columns;
+        max-width: $i * 100% / $number-columns;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  &.flex-right {
+    justify-content: flex-end;
+  }
+
+  &.flex-center {
+    justify-content: center;
+  }
+
+  &.flex-edges {
+    justify-content: space-between;
+  }
+
+  &.flex-spaces {
+    justify-content: space-around;
+  }
+
+  &.flex-top {
+    align-items: flex-start;
+  }
+
+  &.flex-middle {
+    align-items: center;
+  }
+
+  &.flex-bottom {
+    align-items: flex-end;
+  }
+}
+
+.col {
+  padding: 1rem;
+
+  @include resp(sm) {
+    @include col-size(100%);
+  }
+}
+
+.col-fill {
+  flex: 1 1 0;
+  width: auto;
+}
+
+@include create-flex-classes(col);
+@include create-flex-classes(xs, $xsmall-screen);
+@include create-flex-classes(sm, $small-screen);
+@include create-flex-classes(md, $medium-screen);
+@include create-flex-classes(lg, $large-screen);
+
+.align-top {
+  align-self: flex-start;
+}
+
+.align-middle {
+  align-self: center;
+}
+
+.align-bottom {
+  align-self: flex-end;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  position: relative;
+  width: 100%;
+
+  @include resp(md) {
+    width: 85%;
+  }
+  @include resp(xs) {
+    width: 90%;
+  }
+}

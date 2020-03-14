@@ -16,6 +16,13 @@ import { AccountContainer } from './account/account.container';
       {
         path: '',
         component: AccountContainer
+      },
+      {
+        path: 'company',
+        loadChildren: () =>
+          import('@wws/account/feature/lazy/company').then(
+            module => module.AccountFeatureLazyCompanyModule
+          )
       }
     ])
   ],

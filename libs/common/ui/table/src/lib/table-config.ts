@@ -14,4 +14,5 @@ export interface TableConfig {
   columns: TableColumn[]
   click?: Subject<any>;
   refresh?: Subject<boolean>
+  rowClass?: string | string[]
 }

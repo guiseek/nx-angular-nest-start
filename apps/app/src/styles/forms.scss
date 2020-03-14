@@ -2,6 +2,11 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
+
+  legend {
+    padding: 0.5em 1em;
+    opacity: 0.5;
+  }
 }
 
 label {
@@ -9,14 +14,17 @@ label {
   font-style: italic;
   margin: 0.5em 0;
   display: inline-block;
+  font-size: 90%;
+  opacity: 0.6;
 }
 
-.textarea, .input {
+.textarea,
+.input {
   width: 100%;
   padding: 0.5em;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid var(--gray3);
+  border-bottom: 2px solid var(--gray4);
   background: var(--nav-bg);
   font-size: 1em;
   font-weight: 500;
@@ -26,21 +34,27 @@ label {
   font-family: var(--font-body);
 
   &::placeholder {
-      color: var(--text-color);
+    color: var(--text-color);
+    opacity: 0.5;
+
+    transition: opacity 150ms ease;
   }
 
   &:focus {
-      border-bottom: 3px solid var(--text-color);
+    border-bottom: 2px solid var(--gray2);
+
+    &::placeholder {
+      opacity: 1;
+    }
   }
 
   &.ng-dirty.ng-invalid {
-      border-bottom: 3px solid var(--red);
+    border-bottom: 2px solid var(--red);
   }
 
   &.ng-valid.ng-dirty {
-      border-bottom: 3px solid var(--green);
+    border-bottom: 2px solid var(--green);
   }
-
 }
 
 .textarea {

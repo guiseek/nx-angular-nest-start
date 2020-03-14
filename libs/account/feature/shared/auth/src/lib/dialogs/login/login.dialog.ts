@@ -31,11 +31,7 @@ export class LoginDialog implements OnDestroy {
     if (this.form.valid) {
       this.sub = this.auth
         .login(this.form.value)
-        .subscribe((result) => {
-          console.log(result);
-
-          this.ref.close(result);
-        })
+        .subscribe((result) => this.ref.close(result))
 
     }
   }

@@ -33,7 +33,14 @@
         "libs/account/feature/shared/auth/src/index.ts"
       ],
       "@wws/common/util/browser": ["libs/common/util/browser/src/index.ts"],
-      "@wws/common/ui/table": ["libs/common/ui/table/src/index.ts"]
+      "@wws/common/ui/table": ["libs/common/ui/table/src/index.ts"],
+      "@wws/account/feature/lazy/company": [
+        "libs/account/feature/lazy/company/src/index.ts"
+      ],
+      "@wws/account/feature/shared/forms": [
+        "libs/account/feature/shared/forms/src/index.ts"
+      ],
+      "@wws/common/util/http": ["libs/common/util/http/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
