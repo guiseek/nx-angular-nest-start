@@ -1,8 +1,10 @@
 import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ChangePasswordDto } from '../../dtos/change-password.dto';
 import { CreateUserDto } from '../../dtos/create-user.dto';
 import { UsersService } from './users.service';
 
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
   constructor(private readonly service: UsersService) {}

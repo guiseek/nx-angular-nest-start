@@ -4,10 +4,10 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { ConfirmationDto, NameDto, ResetPasswordDto } from '../dtos';
 
 export class ResetPassword {
-  @Column({ nullable: true })
+  @Column({ nullable: true, select: false })
   token: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, select: false })
   expires: Date;
 }
 export class Name {
@@ -21,14 +21,16 @@ export class Confirmation {
   @Column({
     type: 'text',
     nullable: true,
-    name: 'confirmation_code'
+    name: 'confirmation_code',
+    select: false
   })
   code: string;
 
   @Column({
     type: 'timestamp',
     nullable: true,
-    name: 'confirmation_time'
+    name: 'confirmation_time',
+    select: false
   })
   time: Date | null;
 }
