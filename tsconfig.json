@@ -18,9 +18,6 @@
     "paths": {
       "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@wws/account/feature/api": ["libs/account/feature/api/src/index.ts"],
-      "@wws/shared/auth/auth-elements": [
-        "libs/shared/auth/auth-elements/src/index.ts"
-      ],
       "@wws/account/feature/lazy/users": [
         "libs/account/feature/lazy/users/src/index.ts"
       ],
