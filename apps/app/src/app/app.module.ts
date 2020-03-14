@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '@wws/account/shared/data-access';
+import { AuthGuard, AuthService } from '@wws/account/shared/data-access';
 import { Database, DATABASE_CONFIG } from '@wws/common/util/browser';
 import { TokenInterceptor } from '@wws/common/util/http';
 import { AppComponent } from './app.component';
@@ -17,19 +17,35 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot(
       [
         {
-          path: '',
-          loadChildren: () =>
-            import('@wws/account/lazy/user').then(
-              module => module.AccountLazyUserModule
-            )
-        },
-        {
-          path: 'account',
+          path: 'auth',
           loadChildren: () =>
             import('@wws/account/lazy/auth').then(
               module => module.AccountLazyAuthModule
             )
+        },
+        {
+          path: '',
+          canActivate: [AuthGuard],
+          loadChildren: () =>
+            import('@wws/account/lazy/company').then(
+              module => module.AccountLazyCompanyModule
+            )
         }
+        // {
+        //   path: '',
+        //   loadChildren: () =>
+        //     import('@wws/account/lazy/user').then(
+        //       module => module.AccountLazyUserModule
+        //     )
+        // },
+        // {
+        //   path: '',
+        //   canActivate: [AuthGuard],
+        //   loadChildren: () =>
+        //     import('@wws/account/lazy/auth').then(
+        //       module => module.AccountLazyAuthModule
+        //     )
+        // }
       ],
       { initialNavigation: true }
     )
@@ -50,4 +66,4 @@ import { AppComponent } from './app.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

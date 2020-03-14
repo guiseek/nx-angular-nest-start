@@ -1,17 +1,7 @@
-<div style="text-align:center">
+<header style="text-align:center">
   <h1>Welcome to app!</h1>
-</div>
-<nav>
-  <ul>
-    <li><a routerLink="/">Usuários</a></li>
-    <li><a routerLink="/account">Conta</a></li>
-  </ul>
-</nav>
+</header>
 
 <main role="main">
   <router-outlet></router-outlet>
 </main>
-
-<footer>
-  {{ today | date: 'long' }}
-</footer>

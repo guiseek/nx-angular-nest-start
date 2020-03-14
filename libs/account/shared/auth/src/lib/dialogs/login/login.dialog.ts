@@ -5,7 +5,7 @@ import { DialogRef, DIALOG_DATA } from '@wws/ui-kit';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'wws-auth-login',
+  selector: 'wws-auth-login-dialog',
   templateUrl: './login.dialog.html',
   styleUrls: ['./login.dialog.scss']
 })

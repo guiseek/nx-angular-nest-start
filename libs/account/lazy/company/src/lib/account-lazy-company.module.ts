@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CompanyContainer } from './company/company.container';
 
@@ -8,7 +8,10 @@ import { CompanyContainer } from './company/company.container';
     CommonModule,
 
     RouterModule.forChild([
-      /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+      {
+        path: '',
+        component: CompanyContainer
+      }
     ])
   ],
   declarations: [CompanyContainer]

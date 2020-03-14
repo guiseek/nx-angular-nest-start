@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import {
-  ForgotPasswordDialog,
-  LoginDialog,
-  ResetPasswordDialog
-} from '@wws/account/shared/auth';
+import { Router } from '@angular/router';
+import { ForgotPasswordDialog, LoginDialog, ResetPasswordDialog } from '@wws/account/shared/auth';
+import { AuthService } from '@wws/account/shared/data-access';
+import { ILogin } from '@wws/api-interfaces';
 import { Dialog } from '@wws/ui-kit';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -18,8 +17,21 @@ export class AccountContainer {
   forgot$: Observable<any> = of(false);
   reset$: Observable<any> = of(false);
 
-  constructor(public dialog: Dialog) {}
+  constructor(
+    public dialog: Dialog,
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
+  onSubmit(data: ILogin) {
+    console.log(data);
+    this.auth.login(data)
+      .subscribe(auth => {
+        if (!!auth) {
+          this.router.navigateByUrl('/');
+        }
+      })
+  }
   login() {
     this.login$ = this.dialog
       .openFromComponent(LoginDialog, { width: '300px' })

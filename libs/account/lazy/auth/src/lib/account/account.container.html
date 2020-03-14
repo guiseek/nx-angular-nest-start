@@ -1,28 +1,18 @@
+<div class="box">
+  <wws-auth-login (action)="onSubmit($event)"></wws-auth-login>
+</div>
+
+
 <div class="text-center">
-  <button
-    class="btn btn-green"
-    [disabled]="(login$ | async) === null"
-    type="button"
-    (click)="login()"
-  >
+  <button class="btn btn-green" [disabled]="(login$ | async) === null" type="button" (click)="login()">
     Login
   </button>
 
-  <button
-    class="btn btn-purple"
-    [disabled]="(forgot$ | async) === null"
-    type="button"
-    (click)="forgot()"
-  >
+  <button class="btn btn-purple" [disabled]="(forgot$ | async) === null" type="button" (click)="forgot()">
     Esqueci a senha
   </button>
 
-  <button
-    class="btn btn-blue"
-    [disabled]="(reset$ | async) === null"
-    type="button"
-    (click)="reset()"
-  >
+  <button class="btn btn-blue" [disabled]="(reset$ | async) === null" type="button" (click)="reset()">
     Configurar senha
   </button>
 
