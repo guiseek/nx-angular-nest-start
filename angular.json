@@ -410,6 +410,38 @@
         }
       },
       "schematics": {}
+    },
+    "common-ui-dialog": {
+      "projectType": "library",
+      "root": "libs/common/ui/dialog",
+      "sourceRoot": "libs/common/ui/dialog/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/ui/dialog/tsconfig.lib.json",
+              "libs/common/ui/dialog/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/ui/dialog/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/ui/dialog/jest.config.js",
+            "tsConfig": "libs/common/ui/dialog/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/common/ui/dialog/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

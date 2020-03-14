@@ -1,3 +1,7 @@
 <p>account works!</p>
 
-<custom-login-form action="/api/auth/login" (isLogged)="onLogged($event)"></custom-login-form>
+<button type="button" (click)="open(loginDialog)">Login</button>
+
+<ng-template #loginDialog>
+  <custom-login-form action="/api/auth/login" (isLogged)="onLogged($event)"></custom-login-form>
+</ng-template>

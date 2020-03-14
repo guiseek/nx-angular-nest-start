@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccountFeatureSharedDataAccessModule } from '@wws/account/feature/shared/data-access';
+import { CommonUiDialogModule } from '@wws/common/ui/dialog';
 import { AuthElementsModule } from '@wws/shared/auth/auth-elements';
 import { AccountContainer } from './account/account.container';
 
@@ -9,6 +10,7 @@ import { AccountContainer } from './account/account.container';
   imports: [
     CommonModule,
     AuthElementsModule,
+    CommonUiDialogModule,
     AccountFeatureSharedDataAccessModule,
     RouterModule.forChild([
       {
