@@ -16,7 +16,44 @@ ng generate @nestjs/schematics:service --name=auth-mailer --path=src/lib/service
 
 typeorm entity:create --dir libs/account/feature/api/src/lib/entities --name user
 
+```
 
+## Account Feature Lazy Users
+```bash
+ng generate @nrwl/angular:library --name=users --style=scss --directory=account/feature/lazy --lazy --parentModule=apps/app/src/app/app.module.ts --routing --tags=feature:lazy
+
+ng generate @schematics/angular:component --name=users --project=account-feature-lazy-users --style=scss --type=Container
+```
+
+## Account Feature Lazy Account
+```bash
+ng generate @nrwl/angular:library --name=account --style=scss --directory=account/feature/lazy --lazy --parentModule=apps/app/src/app/app.module.ts --routing --tags=feature:lazy
+
+ng generate @schematics/angular:component --name=account --project=account-feature-lazy-account --style=scss --type=Container
+```
+
+## Shared Data Acccess
+```bash
+ng generate @nrwl/angular:library --name=data-access --directory=shared --tags=shared:data-access
+
+ng generate @schematics/angular:service --name=services/http-backend --project=shared-data-access
+```
+
+
+## Account Feature Shared Data Acccess
+```bash
+ng generate @nrwl/angular:library --name=data-access --directory=account/feature/shared --tags=feature:shared:data-access
+
+ng generate @schematics/angular:service --name=services/auth-service --project=account-feature-shared-data-access
+
+ng generate @schematics/angular:service --name=services/user-service --project=account-feature-shared-data-access
+```
+
+## Auth elements
+
+```bash
+ng generate @nrwl/angular:library --name=auth-elements --directory=shared/auth --prefix=custom --publishable --simpleModuleName --tags=scope:shared,type:ui
+ng generate @schematics/angular:component --name=login-form --project=shared-auth-auth-elements --changeDetection=OnPush --export --type=Element --viewEncapsulation=Native
 ```
 
 

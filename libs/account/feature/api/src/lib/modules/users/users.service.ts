@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as crypto from 'crypto';
 import { FindOneOptions, Repository } from 'typeorm';
-import { CreateUserDto } from '../../dtos/create-user.dto';
+import { CreateUserDto, ForgotPasswordDto } from '../../dtos';
 import { User } from '../../entities/user';
 
 @Injectable()
@@ -53,7 +53,7 @@ export class UsersService {
       throw new BadRequestException('Invalid credentials')
     }
   }
-  async forgotPassword({ email, lastPassword }) {
+  async forgotPassword({ email, lastPassword }: ForgotPasswordDto) {
     const user = await this.repo.findOne({ email })
     if (!user) {
       throw new BadRequestException()

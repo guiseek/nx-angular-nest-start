@@ -1,9 +1,7 @@
 import { Type } from 'class-transformer';
 import * as crypto from 'crypto';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { ConfirmationDto } from '../dtos/confirmation.dto';
-import { NameDto } from '../dtos/name.dto';
-import { ResetPasswordDto } from '../dtos/reset-password.dto';
+import { ConfirmationDto, NameDto, ResetPasswordDto } from '../dtos';
 
 export class ResetPassword {
   @Column({ nullable: true })

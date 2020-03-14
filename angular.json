@@ -238,6 +238,178 @@
           }
         }
       }
+    },
+    "shared-auth-auth-elements": {
+      "projectType": "library",
+      "root": "libs/shared/auth/auth-elements",
+      "sourceRoot": "libs/shared/auth/auth-elements/src",
+      "prefix": "custom",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/shared/auth/auth-elements/tsconfig.lib.json",
+            "project": "libs/shared/auth/auth-elements/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/auth/auth-elements/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/auth/auth-elements/tsconfig.lib.json",
+              "libs/shared/auth/auth-elements/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/auth/auth-elements/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/auth/auth-elements/jest.config.js",
+            "tsConfig": "libs/shared/auth/auth-elements/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/auth/auth-elements/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "account-feature-lazy-users": {
+      "projectType": "library",
+      "root": "libs/account/feature/lazy/users",
+      "sourceRoot": "libs/account/feature/lazy/users/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/lazy/users/tsconfig.lib.json",
+              "libs/account/feature/lazy/users/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/lazy/users/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/lazy/users/jest.config.js",
+            "tsConfig": "libs/account/feature/lazy/users/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/account/feature/lazy/users/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "account-feature-lazy-account": {
+      "projectType": "library",
+      "root": "libs/account/feature/lazy/account",
+      "sourceRoot": "libs/account/feature/lazy/account/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/lazy/account/tsconfig.lib.json",
+              "libs/account/feature/lazy/account/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/lazy/account/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/lazy/account/jest.config.js",
+            "tsConfig": "libs/account/feature/lazy/account/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/account/feature/lazy/account/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "shared-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/data-access",
+      "sourceRoot": "libs/shared/data-access/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access/tsconfig.lib.json",
+              "libs/shared/data-access/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/data-access/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access/jest.config.js",
+            "tsConfig": "libs/shared/data-access/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "account-feature-shared-data-access": {
+      "projectType": "library",
+      "root": "libs/account/feature/shared/data-access",
+      "sourceRoot": "libs/account/feature/shared/data-access/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/account/feature/shared/data-access/tsconfig.lib.json",
+              "libs/account/feature/shared/data-access/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/account/feature/shared/data-access/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/account/feature/shared/data-access/jest.config.js",
+            "tsConfig": "libs/account/feature/shared/data-access/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/account/feature/shared/data-access/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

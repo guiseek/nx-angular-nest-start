@@ -26,6 +26,21 @@
     },
     "account-feature-api": {
       "tags": ["scope:account", "type:feature"]
+    },
+    "shared-auth-auth-elements": {
+      "tags": ["scope:shared", "type:ui"]
+    },
+    "account-feature-lazy-users": {
+      "tags": ["feature:lazy"]
+    },
+    "account-feature-lazy-account": {
+      "tags": ["feature:lazy"]
+    },
+    "shared-data-access": {
+      "tags": ["shared:data-access"]
+    },
+    "account-feature-shared-data-access": {
+      "tags": ["feature:shared:data-access"]
     }
   }
 }

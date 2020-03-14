@@ -1,5 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { ForgotPasswordDto } from '../../dtos/forgot-password.dto';
 import { User } from '../../entities/user';
 import { AuthResponse } from '../../interfaces/auth-response.interface';
 import { UsersService } from '../users/users.service';
@@ -38,7 +39,7 @@ export class AuthService {
       // relations: ['company']
     })
   }
-  async forgotPassword(dto) {
+  async forgotPassword(dto: ForgotPasswordDto) {
     try {
       const { resetPassword, ...data } = await this.usersService.forgotPassword(dto)
       if (resetPassword) {
