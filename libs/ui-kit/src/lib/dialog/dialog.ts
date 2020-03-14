@@ -1,37 +1,15 @@
-import {
-  TemplateRef,
-  SkipSelf,
-  Optional,
-  Injectable,
-  Injector,
-  Inject,
-  ComponentRef,
-  OnDestroy,
-  Type
-} from '@angular/core';
-import { ComponentPortal, PortalInjector, TemplatePortal } from '@angular/cdk/portal';
-import { of as observableOf, Observable, Subject, defer } from 'rxjs';
-import { DialogRef } from './dialog-ref';
-import { Location } from '@angular/common';
-import { DialogConfig } from './dialog-config';
 import { Directionality } from '@angular/cdk/bidi';
-import { DialogContainer } from './dialog/dialog.container';
-import {
-  ComponentType,
-  Overlay,
-  OverlayRef,
-  OverlayConfig,
-  ScrollStrategy,
-} from '@angular/cdk/overlay';
+import { ComponentType, Overlay, OverlayConfig, OverlayRef, ScrollStrategy } from '@angular/cdk/overlay';
+import { ComponentPortal, PortalInjector, TemplatePortal } from '@angular/cdk/portal';
+import { Location } from '@angular/common';
+import { ComponentRef, Inject, Injectable, Injector, OnDestroy, Optional, SkipSelf, TemplateRef, Type } from '@angular/core';
+import { defer, Observable, of as observableOf, Subject } from 'rxjs';
 import { startWith } from 'rxjs/operators';
+import { DialogConfig } from './dialog-config';
+import { DIALOG_CONFIG, DIALOG_CONTAINER, DIALOG_DATA, DIALOG_REF, DIALOG_SCROLL_STRATEGY } from './dialog-injectors';
+import { DialogRef } from './dialog-ref';
+import { DialogContainer } from './dialog.container';
 
-import {
-  DIALOG_SCROLL_STRATEGY,
-  DIALOG_DATA,
-  DIALOG_REF,
-  DIALOG_CONTAINER,
-  DIALOG_CONFIG,
-} from './dialog-injectors';
 
 
 /**

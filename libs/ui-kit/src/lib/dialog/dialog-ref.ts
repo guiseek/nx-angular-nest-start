@@ -1,10 +1,10 @@
 
-import {OverlayRef, GlobalPositionStrategy, OverlaySizeConfig} from '@angular/cdk/overlay';
-import {ESCAPE, hasModifierKey} from '@angular/cdk/keycodes';
-import {Observable} from 'rxjs';
-import {map, filter} from 'rxjs/operators';
-import {DialogPosition} from './dialog-config';
-import { DialogContainer } from './dialog/dialog.container';
+import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
+import { GlobalPositionStrategy, OverlayRef, OverlaySizeConfig } from '@angular/cdk/overlay';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { DialogPosition } from './dialog-config';
+import { DialogContainer } from './dialog.container';
 
 /** ID exclusivo para a caixa de diálogo criada. */
 let uniqueId = 0;

@@ -16,7 +16,9 @@
     },
     "app-e2e": {
       "tags": [],
-      "implicitDependencies": ["app"]
+      "implicitDependencies": [
+        "app"
+      ]
     },
     "api": {
       "tags": []
@@ -25,40 +27,60 @@
       "tags": []
     },
     "account-feature-api": {
-      "tags": ["scope:account", "type:feature"]
+      "tags": [
+        "scope:account",
+        "type:feature"
+      ]
     },
     "account-feature-lazy-users": {
-      "tags": ["feature:lazy"]
+      "tags": [
+        "feature:lazy"
+      ]
     },
     "account-feature-lazy-account": {
-      "tags": ["feature:lazy"]
+      "tags": [
+        "feature:lazy"
+      ]
     },
     "shared-data-access": {
-      "tags": ["shared:data-access"]
+      "tags": [
+        "shared:data-access"
+      ]
     },
     "account-feature-shared-data-access": {
-      "tags": ["feature:shared:data-access"]
-    },
-    "common-ui-dialog": {
-      "tags": ["common:ui"]
+      "tags": [
+        "feature:shared:data-access"
+      ]
     },
     "account-feature-shared-auth": {
-      "tags": ["feature:shared"]
+      "tags": [
+        "feature:shared"
+      ]
     },
     "common-util-browser": {
-      "tags": ["shared:util"]
-    },
-    "common-ui-table": {
-      "tags": ["common:ui"]
+      "tags": [
+        "shared:util"
+      ]
     },
     "account-feature-lazy-company": {
-      "tags": ["feature:lazy"]
+      "tags": [
+        "feature:lazy"
+      ]
     },
     "account-feature-shared-forms": {
-      "tags": ["feature:shared"]
+      "tags": [
+        "feature:shared"
+      ]
     },
     "common-util-http": {
-      "tags": ["shared:util"]
+      "tags": [
+        "shared:util"
+      ]
+    },
+    "ui-kit": {
+      "tags": [
+        "common:ui"
+      ]
     }
   }
 }

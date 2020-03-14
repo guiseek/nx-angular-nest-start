@@ -10,38 +10,57 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@wws/account/feature/api": ["libs/account/feature/api/src/index.ts"],
+      "@wws/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@wws/account/feature/api": [
+        "libs/account/feature/api/src/index.ts"
+      ],
       "@wws/account/feature/lazy/users": [
         "libs/account/feature/lazy/users/src/index.ts"
       ],
       "@wws/account/feature/lazy/account": [
         "libs/account/feature/lazy/account/src/index.ts"
       ],
-      "@wws/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@wws/shared/data-access": [
+        "libs/shared/data-access/src/index.ts"
+      ],
       "@wws/account/feature/shared/data-access": [
         "libs/account/feature/shared/data-access/src/index.ts"
       ],
-      "@wws/common/ui/dialog": ["libs/common/ui/dialog/src/index.ts"],
       "@wws/account/feature/shared/auth": [
         "libs/account/feature/shared/auth/src/index.ts"
       ],
-      "@wws/common/util/browser": ["libs/common/util/browser/src/index.ts"],
-      "@wws/common/ui/table": ["libs/common/ui/table/src/index.ts"],
+      "@wws/common/util/browser": [
+        "libs/common/util/browser/src/index.ts"
+      ],
       "@wws/account/feature/lazy/company": [
         "libs/account/feature/lazy/company/src/index.ts"
       ],
       "@wws/account/feature/shared/forms": [
         "libs/account/feature/shared/forms/src/index.ts"
       ],
-      "@wws/common/util/http": ["libs/common/util/http/src/index.ts"]
+      "@wws/common/util/http": [
+        "libs/common/util/http/src/index.ts"
+      ],
+      "@wws/ui-kit": [
+        "libs/ui-kit/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
