@@ -82,6 +82,20 @@ ng generate @schematics/angular:component --name=table --project=common-ui-table
 ```
 
 
+----------
+
+## Companies
+
+```bash
+ng generate @nestjs/schematics:module --name=companies --path=src/lib/modules --sourceRoot=libs/account/feature/api
+
+ng generate @nestjs/schematics:controller --name=companies --path=src/lib/modules/companies --sourceRoot=libs/account/feature/api --flat=true
+
+ng generate @nestjs/schematics:service --name=companies --path=src/lib/modules/companies --sourceRoot=libs/account/feature/api --flat=true
+
+typeorm entity:create --dir libs/account/feature/api/src/lib/entities --name company
+```
+
 <!-- This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
