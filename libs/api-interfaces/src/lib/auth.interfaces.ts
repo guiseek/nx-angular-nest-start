@@ -6,6 +6,6 @@ export interface AuthPayload {
   };
 }
 export interface AuthSuccessResponse {
-  payload: AuthPayload,
+  payload: AuthPayload;
   access_token: string;
 }

@@ -1,4 +1,13 @@
-import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put
+} from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CompaniesService } from './companies.service';
 import { CreateCompanyDto, UpdateCompanyDto } from './dtos';
@@ -32,10 +41,7 @@ export class CompaniesController {
   }
 
   @Put(':id')
-  async update(
-    @Param('id') id: number,
-    @Body() data: UpdateCompanyDto
-  ) {
+  async update(@Param('id') id: number, @Body() data: UpdateCompanyDto) {
     try {
       return await this.service.update(id, data);
     } catch (err) {

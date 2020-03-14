@@ -17,31 +17,21 @@
     "baseUrl": ".",
     "paths": {
       "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@wws/account/feature/lazy/users": [
-        "libs/account/feature/lazy/users/src/index.ts"
-      ],
-      "@wws/account/feature/lazy/account": [
-        "libs/account/feature/lazy/account/src/index.ts"
-      ],
       "@wws/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@wws/account/feature/shared/data-access": [
-        "libs/account/feature/shared/data-access/src/index.ts"
-      ],
-      "@wws/account/feature/shared/auth": [
-        "libs/account/feature/shared/auth/src/index.ts"
-      ],
       "@wws/common/util/browser": ["libs/common/util/browser/src/index.ts"],
-      "@wws/account/feature/lazy/company": [
-        "libs/account/feature/lazy/company/src/index.ts"
-      ],
-      "@wws/account/feature/shared/forms": [
-        "libs/account/feature/shared/forms/src/index.ts"
-      ],
       "@wws/common/util/http": ["libs/common/util/http/src/index.ts"],
       "@wws/ui-kit": ["libs/ui-kit/src/index.ts"],
       "@wws/account/api/users": ["libs/account/api/users/src/index.ts"],
       "@wws/account/api/companies": ["libs/account/api/companies/src/index.ts"],
-      "@wws/account/api/auth": ["libs/account/api/auth/src/index.ts"]
+      "@wws/account/api/auth": ["libs/account/api/auth/src/index.ts"],
+      "@wws/account/lazy/company": ["libs/account/lazy/company/src/index.ts"],
+      "@wws/account/lazy/user": ["libs/account/lazy/user/src/index.ts"],
+      "@wws/account/lazy/auth": ["libs/account/lazy/auth/src/index.ts"],
+      "@wws/account/shared/auth": ["libs/account/shared/auth/src/index.ts"],
+      "@wws/account/shared/data-access": [
+        "libs/account/shared/data-access/src/index.ts"
+      ],
+      "@wws/account/shared/user": ["libs/account/shared/user/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

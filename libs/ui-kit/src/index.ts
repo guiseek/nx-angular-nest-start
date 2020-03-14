@@ -5,4 +5,3 @@ export * from './lib/dialog/dialog-ref';
 export * from './lib/dialog/dialog.container';
 export * from './lib/table';
 export * from './lib/ui-kit.module';
-

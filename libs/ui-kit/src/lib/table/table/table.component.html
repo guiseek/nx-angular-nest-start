@@ -1,6 +1,13 @@
-<table cdk-table [dataSource]="data" [@animateStagger]="{ value: '50' }" class="table-hover">
-
-  <ng-container *ngFor="let column of config.columns" [cdkColumnDef]="column.columnDef">
+<table
+  cdk-table
+  [dataSource]="data"
+  [@animateStagger]="{ value: '50' }"
+  class="table-hover"
+>
+  <ng-container
+    *ngFor="let column of config.columns"
+    [cdkColumnDef]="column.columnDef"
+  >
     <th *cdkHeaderCellDef>{{ column.header }}</th>
 
     <td *cdkCellDef="let row" [ngClass]="column?.cellClass">
@@ -9,5 +16,11 @@
   </ng-container>
 
   <tr cdk-header-row *cdkHeaderRowDef="displayedColumns; sticky: true"></tr>
-  <tr [@animate]="{ value: '*', params: { y: '100%' } }" [ngClass]="config?.rowClass" cdk-row *cdkRowDef="let row; columns: displayedColumns" (click)="config.click.next(row)"></tr>
+  <tr
+    [@animate]="{ value: '*', params: { y: '100%' } }"
+    [ngClass]="config?.rowClass"
+    cdk-row
+    *cdkRowDef="let row; columns: displayedColumns"
+    (click)="config.click.next(row)"
+  ></tr>
 </table>

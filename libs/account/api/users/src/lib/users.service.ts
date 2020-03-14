@@ -30,8 +30,8 @@ export class UsersService {
     });
 
     if (user.validatePassword(old)) {
-      user.password = user.hashPassword(password)
-      return await this.repo.update(id, user)
+      user.password = user.hashPassword(password);
+      return await this.repo.update(id, user);
     } else {
       throw new BadRequestException();
     }
@@ -66,14 +66,11 @@ export class UsersService {
     });
   }
   async resetPassword({ token, password }) {
-    const now = new Date()
+    const now = new Date();
     const user = await this.repo.findOne({
       where: {
         resetPassword: { token },
-        select: [
-          'resetPassword.token',
-          'resetPassword.expires'
-        ]
+        select: ['resetPassword.token', 'resetPassword.expires']
       }
     });
 

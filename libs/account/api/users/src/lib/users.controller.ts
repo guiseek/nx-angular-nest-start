@@ -1,4 +1,14 @@
-import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+  UseGuards
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { ChangePasswordDto, CreateUserDto } from './dtos';
@@ -19,7 +29,9 @@ export class UsersController {
   }
   @UseGuards(AuthGuard('jwt'))
   @Get()
-  get() { return this.service.find(); }
+  get() {
+    return this.service.find();
+  }
 
   @UseGuards(AuthGuard('jwt'))
   @Delete(':id')

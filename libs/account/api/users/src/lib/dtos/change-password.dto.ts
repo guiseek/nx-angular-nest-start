@@ -10,5 +10,4 @@ export class ChangePasswordDto {
   @MinLength(4, { always: true })
   @MaxLength(255, { always: true })
   public password: string;
-
 }

@@ -1,0 +1,62 @@
+<form [formGroup]="this" (ngSubmit)="action.emit(value)">
+  <fieldset>
+    <legend>Usuário</legend>
+
+    <hr />
+
+    <div class="row" formGroupName="name">
+      <div class="col col-fill">
+        <label for="first">Nome</label>
+        <input
+          class="input"
+          type="first"
+          id="first"
+          formControlName="first"
+          required
+        />
+      </div>
+      <div class="col col-fill">
+        <label for="last">Sobrenome</label>
+        <input class="input" type="last" id="last" formControlName="last" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-fill">
+        <label for="email">Email</label>
+        <input
+          class="input"
+          placeholder="nome@provedor.com.br"
+          type="email"
+          id="email"
+          formControlName="email"
+          required
+        />
+      </div>
+      <div class="col col-fill">
+        <label for="password">Senha</label>
+        <input
+          class="input"
+          type="password"
+          id="password"
+          formControlName="password"
+          required
+        />
+      </div>
+    </div>
+    <div class="row flex-edges">
+      <div class="col">
+        <button class="btn" type="button" (click)="reset()">Cancelar</button>
+      </div>
+      <div class="col align-end">
+        <button
+          class="btn btn-orange-outline"
+          [disabled]="invalid"
+          type="submit"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>

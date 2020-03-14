@@ -7,7 +7,7 @@ import { HttpBackendService } from './services/http-backend.service';
   imports: [],
   providers: [
     HttpBackendService,
-    { provide: DATA_ACCESS_CONFIG, useClass: DataAccessConfig },
+    { provide: DATA_ACCESS_CONFIG, useClass: DataAccessConfig }
   ]
 })
-export class SharedDataAccessModule { }
+export class SharedDataAccessModule {}

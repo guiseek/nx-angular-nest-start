@@ -1,6 +1,13 @@
 import { IUser } from '@wws/api-interfaces';
 // import { Type } from 'class-transformer';
-import { IsNotEmpty, IsNumber, IsOptional, IsString, MaxLength, ValidateNested } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  MaxLength,
+  ValidateNested
+} from 'class-validator';
 // import { User } from '../entities/user';
 
 export class UpdateCompanyDto {

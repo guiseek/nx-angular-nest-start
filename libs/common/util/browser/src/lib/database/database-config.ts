@@ -35,7 +35,6 @@ export interface Model {
   indexes: Indexes;
 }
 
-
 export interface MemoModel {
   properties: ModelProperties;
 }

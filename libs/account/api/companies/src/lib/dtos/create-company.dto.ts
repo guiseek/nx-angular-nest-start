@@ -1,9 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IUser } from '@wws/api-interfaces';
-import { IsNotEmpty, IsOptional, IsString, MaxLength, ValidateNested } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  MaxLength,
+  ValidateNested
+} from 'class-validator';
 
 export class CreateCompanyDto {
-
   @ApiProperty({
     type: 'string',
     required: true,

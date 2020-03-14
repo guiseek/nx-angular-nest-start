@@ -22,6 +22,7 @@ typeorm entity:create --dir libs/account/feature/api/src/lib/entities --name use
 ```
 
 ## Account Feature Lazy Users
+
 ```bash
 ng generate @nrwl/angular:library --name=users --style=scss --directory=account/feature/lazy --lazy --parentModule=apps/app/src/app/app.module.ts --routing --tags=feature:lazy
 
@@ -29,22 +30,23 @@ ng generate @schematics/angular:component --name=users --project=account-feature
 ```
 
 ## Account Feature Lazy Account
+
 ```bash
 ng generate @nrwl/angular:library --name=account --style=scss --directory=account/feature/lazy --lazy --parentModule=apps/app/src/app/app.module.ts --routing --tags=feature:lazy
 
 ng generate @schematics/angular:component --name=account --project=account-feature-lazy-account --style=scss --type=Container
 ```
 
-
 ## Shared Data Acccess
+
 ```bash
 ng generate @nrwl/angular:library --name=data-access --directory=shared --tags=shared:data-access
 
 ng generate @schematics/angular:service --name=services/http-backend --project=shared-data-access
 ```
 
-
 ## Account Feature Shared Data Acccess
+
 ```bash
 ng generate @nrwl/angular:library --name=data-access --directory=account/feature/shared --tags=feature:shared:data-access
 
@@ -54,11 +56,13 @@ ng generate @schematics/angular:service --name=services/user --project=account-f
 ```
 
 ## Common Ui Dialog
+
 ```bash
 ng generate @nrwl/angular:library --name=dialog --style=scss --directory=common/ui --tags=common:ui
 ```
 
 ## Account Feature Shared Auth
+
 ```bash
 ng generate @nrwl/angular:library --name=auth --style=scss --directory=account/feature/shared --prefix=wws-auth --tags=feature:shared
 
@@ -70,6 +74,7 @@ ng generate @schematics/angular:component --name=dialogs/reset-password --projec
 ```
 
 ## Common Util Browser
+
 ```bash
 ng generate @nrwl/workspace:library --name=browser --directory=common/util --tags=shared:util
 
@@ -79,6 +84,7 @@ touch libs/common/util/browser/src/lib/database/databaase.config.ts
 ```
 
 ## Common Util Http
+
 ```bash
 ng generate @nrwl/workspace:library --name=http --directory=common/util --tags=shared:util
 
@@ -86,14 +92,14 @@ ng generate @schematics/angular:interceptor --name=interceptors/token --project=
 ```
 
 ## Common Ui Table
+
 ```bash
 ng generate @nrwl/angular:library --name=table --style=scss --directory=common/ui --tags=common:ui
 
 ng generate @schematics/angular:component --name=table --project=common-ui-table --style=scss --export --viewEncapsulation=None
 ```
 
-
-----------
+---
 
 ## Companies
 
@@ -107,8 +113,8 @@ ng generate @nestjs/schematics:service --name=companies --path=src/lib/modules/c
 typeorm entity:create --dir libs/account/feature/api/src/lib/entities --name company
 ```
 
-
 ## Account Feature Lazy Company
+
 ```bash
 ng generate @nrwl/angular:library --name=company --style=scss --directory=account/feature/lazy --lazy --parentModule=apps/app/src/app/app.module.ts --routing --tags=feature:lazy
 
@@ -116,6 +122,7 @@ ng generate @schematics/angular:component --name=company --project=account-featu
 ```
 
 ## Account Feature Shared Forms
+
 ```bash
 ng generate @nrwl/angular:library --name=forms --style=scss --directory=account/feature/shared --prefix=wws-form --tags=feature:shared
 
@@ -123,8 +130,6 @@ ng generate @schematics/angular:component --name=users/create-user --project=acc
 
 ng generate @schematics/angular:component --name=companies/create-company --project=account-feature-shared-forms --style=scss --export --type=Form
 ```
-
-
 
 <!-- This project was generated using [Nx](https://nx.dev).
 

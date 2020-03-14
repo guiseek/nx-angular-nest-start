@@ -1,5 +1,10 @@
 import * as crypto from 'crypto';
-import { Connection, EntitySubscriberInterface, EventSubscriber, InsertEvent } from 'typeorm';
+import {
+  Connection,
+  EntitySubscriberInterface,
+  EventSubscriber,
+  InsertEvent
+} from 'typeorm';
 import { ConfirmationDto } from './dtos/confirmation.dto';
 import { User } from './entities/user';
 
@@ -20,7 +25,7 @@ export class UserSubscriber implements EntitySubscriberInterface<User> {
     event.entity.confirmation = {
       code: this.confirmCode(confirmation),
       time: null
-    }
+    };
   }
 
   hashPassword(password: string) {

@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="box col col-fill">
+    <wws-table [config]="tableConfig"></wws-table>
+  </div>
+  <div class="box col col-4">
+    <wws-form-create-user
+      (action)="onCreateUser($event)"
+    ></wws-form-create-user>
+  </div>
+</div>

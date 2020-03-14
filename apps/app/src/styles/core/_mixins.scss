@@ -82,7 +82,12 @@
   @param string
   @default all | 235ms | ease-in-out | 0
 */
-@mixin transition($name: all, $duration: 235ms, $animation: ease-in-out, $delay: 0s) {
+@mixin transition(
+  $name: all,
+  $duration: 235ms,
+  $animation: ease-in-out,
+  $delay: 0s
+) {
   transition: $name $duration $animation $delay;
 }
 
@@ -110,12 +115,16 @@
 }
 
 //function for string replacement
-@function str-replace($string, $search, $replace: "") {
+@function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
   @if $index {
     @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;

@@ -35,7 +35,6 @@ export class Confirmation {
   time: Date | null;
 }
 
-
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
@@ -72,4 +71,3 @@ export class User {
     return this.hashPassword(password) === this.password;
   }
 }
-

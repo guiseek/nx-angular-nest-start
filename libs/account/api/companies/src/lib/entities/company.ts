@@ -1,5 +1,11 @@
 import { IUser } from '@wws/api-interfaces';
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn
+} from 'typeorm';
 // import { User } from './user';
 
 @Entity('companies')
@@ -21,12 +27,12 @@ export class Company {
     name: 'user_companies',
     joinColumn: {
       name: 'companyId',
-      referencedColumnName: 'id',
+      referencedColumnName: 'id'
     },
     inverseJoinColumn: {
       name: 'userId',
-      referencedColumnName: 'id',
-    },
+      referencedColumnName: 'id'
+    }
   })
   users?: IUser[];
 }

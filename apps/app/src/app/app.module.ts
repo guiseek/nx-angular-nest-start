@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '@wws/account/feature/shared/data-access';
+import { AuthService } from '@wws/account/shared/data-access';
 import { Database, DATABASE_CONFIG } from '@wws/common/util/browser';
 import { TokenInterceptor } from '@wws/common/util/http';
 import { AppComponent } from './app.component';
@@ -19,15 +19,15 @@ import { AppComponent } from './app.component';
         {
           path: '',
           loadChildren: () =>
-            import('@wws/account/feature/lazy/users').then(
-              module => module.AccountFeatureLazyUsersModule
+            import('@wws/account/lazy/user').then(
+              module => module.AccountLazyUserModule
             )
         },
         {
           path: 'account',
           loadChildren: () =>
-            import('@wws/account/feature/lazy/account').then(
-              module => module.AccountFeatureLazyAccountModule
+            import('@wws/account/lazy/auth').then(
+              module => module.AccountLazyAuthModule
             )
         }
       ],

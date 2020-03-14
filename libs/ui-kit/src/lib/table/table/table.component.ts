@@ -1,8 +1,26 @@
-import { animate, animateChild, animation, query, stagger, state, style, transition, trigger, useAnimation } from '@angular/animations';
+import {
+  animate,
+  animateChild,
+  animation,
+  query,
+  stagger,
+  state,
+  style,
+  transition,
+  trigger,
+  useAnimation
+} from '@angular/animations';
 import { CollectionViewer } from '@angular/cdk/collections';
 import { DataSource } from '@angular/cdk/table';
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { TableConfig } from '../table-config';
@@ -54,8 +72,7 @@ const customAnimation = animation(
         'void => 200',
         query('@*', [stagger('200ms', [animateChild()])], { optional: true })
       )
-    ]),
-
+    ])
   ]
 })
 export class TableComponent extends DataSource<any> implements OnInit {
@@ -83,16 +100,16 @@ export class TableComponent extends DataSource<any> implements OnInit {
     }
 
     if (!!this.config && this.config.refresh) {
-      this.config.refresh
-        .subscribe(() => this.call(this.config));
+      this.config.refresh.subscribe(() => this.call(this.config));
     }
   }
 
   call({ endpoint }) {
-    this.http.get(endpoint)
+    this.http
+      .get(endpoint)
       .pipe(takeUntil(this.destroy$))
       .subscribe((data: any[]) => {
-        console.log(data)
+        console.log(data);
         this.data = data;
       });
   }

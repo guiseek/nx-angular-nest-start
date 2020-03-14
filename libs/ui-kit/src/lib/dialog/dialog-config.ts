@@ -19,9 +19,9 @@ export class DialogConfig<D = any> {
 
   /**
    * Onde o componente anexado deve residir na árvore de componentes * lógicos * do Angular.
-   * Isso afeta o que está disponível para injeção e a ordem de detecção de alterações para o
-   * componente instanciado dentro da caixa de diálogo. Isso não afeta onde a caixa de diálogo
-   * o conteúdo será renderizado.
+   * Isso afeta o que está disponível para injeção e a ordem de detecção de alterações para o
+   * componente instanciado dentro da caixa de diálogo. Isso não afeta onde a caixa de diálogo
+   * o conteúdo será renderizado.
    */
   viewContainerRef?: ViewContainerRef;
 

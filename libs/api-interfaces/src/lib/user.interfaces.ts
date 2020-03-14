@@ -21,4 +21,3 @@ export interface IUser {
   confirmation: IConfirmation;
   resetPassword: IResetPassword;
 }
-

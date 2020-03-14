@@ -87,21 +87,21 @@
 }
 
 .btn-red {
-  @include btn-color("red");
+  @include btn-color('red');
 }
 .btn-purple {
-  @include btn-color("purple");
+  @include btn-color('purple');
 }
 .btn-green {
-  @include btn-color("green");
+  @include btn-color('green');
 }
 .btn-blue {
-  @include btn-color("blue");
+  @include btn-color('blue');
 }
 .btn-orange {
-  @include btn-color("orange");
+  @include btn-color('orange');
 }
 
 .btn-orange-outline {
-  @include btn-outline("orange");
+  @include btn-outline('orange');
 }

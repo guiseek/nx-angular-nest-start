@@ -13,5 +13,5 @@ export interface IForgotPasswordResponse {
   resetPassword: {
     token: string;
     expires: Date;
-  }
+  };
 }

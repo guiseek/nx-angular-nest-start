@@ -10,6 +10,4 @@ import { UsersService } from './users.service';
   providers: [UsersService],
   exports: [UsersService]
 })
-export class AccountApiUsersModule {
-
-}
+export class AccountApiUsersModule {}

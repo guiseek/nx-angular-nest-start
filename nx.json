@@ -24,29 +24,11 @@
     "api-interfaces": {
       "tags": []
     },
-    "account-feature-lazy-users": {
-      "tags": ["feature:lazy"]
-    },
-    "account-feature-lazy-account": {
-      "tags": ["feature:lazy"]
-    },
     "shared-data-access": {
       "tags": ["shared:data-access"]
     },
-    "account-feature-shared-data-access": {
-      "tags": ["feature:shared:data-access"]
-    },
-    "account-feature-shared-auth": {
-      "tags": ["feature:shared"]
-    },
     "common-util-browser": {
       "tags": ["shared:util"]
-    },
-    "account-feature-lazy-company": {
-      "tags": ["feature:lazy"]
-    },
-    "account-feature-shared-forms": {
-      "tags": ["feature:shared"]
     },
     "common-util-http": {
       "tags": ["shared:util"]
@@ -62,6 +44,24 @@
     },
     "account-api-auth": {
       "tags": []
+    },
+    "account-lazy-company": {
+      "tags": ["feature:lazy"]
+    },
+    "account-lazy-user": {
+      "tags": ["feature:lazy"]
+    },
+    "account-lazy-auth": {
+      "tags": ["feature:lazy"]
+    },
+    "account-shared-auth": {
+      "tags": ["feature:shared"]
+    },
+    "account-shared-data-access": {
+      "tags": ["feature:shared:data-access"]
+    },
+    "account-shared-user": {
+      "tags": ["feature:shared"]
     }
   }
 }

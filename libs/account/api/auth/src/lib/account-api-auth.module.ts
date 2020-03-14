@@ -15,11 +15,11 @@ import { LocalStrategy } from './local.strategy';
     AccountApiUsersModule,
     JwtModule.register({
       secret: jwtConstants.secret,
-      signOptions: { expiresIn: '3600s' },
-    }),
+      signOptions: { expiresIn: '3600s' }
+    })
   ],
   controllers: [AuthController],
   providers: [AuthService, AuthMailerService, LocalStrategy, JwtStrategy],
-  exports: [AuthService],
+  exports: [AuthService]
 })
 export class AccountApiAuthModule {}

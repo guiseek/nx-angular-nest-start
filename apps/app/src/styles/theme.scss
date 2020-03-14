@@ -66,14 +66,22 @@ $colors: (
 
   --font-body: 'Roboto', sans-serif;
   --font-head: 'Neuton', serif;
-  --font-code: "attribute-mono", monospace;
+  --font-code: 'attribute-mono', monospace;
   --font-size: 18px;
 
   --max-width-bp: 768px;
 
-  --orange-pink: linear-gradient(to bottom right, var(--orange-light), var(--orange-dark) 85%);
+  --orange-pink: linear-gradient(
+    to bottom right,
+    var(--orange-light),
+    var(--orange-dark) 85%
+  );
 
-  --green-grad: linear-gradient(to bottom right, var(--green-light), var(--green-dark) 85%);
+  --green-grad: linear-gradient(
+    to bottom right,
+    var(--green-light),
+    var(--green-dark) 85%
+  );
 
   @include default-theme;
 }

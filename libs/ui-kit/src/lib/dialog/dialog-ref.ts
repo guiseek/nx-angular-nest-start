@@ -1,6 +1,9 @@
-
 import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { GlobalPositionStrategy, OverlayRef, OverlaySizeConfig } from '@angular/cdk/overlay';
+import {
+  GlobalPositionStrategy,
+  OverlayRef,
+  OverlaySizeConfig
+} from '@angular/cdk/overlay';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { DialogPosition } from './dialog-config';
@@ -25,8 +28,8 @@ export class DialogRef<T, R = any> {
   constructor(
     public _overlayRef: OverlayRef,
     protected _containerInstance: DialogContainer,
-    readonly id: string = `dialog-${uniqueId++}`) {
-
+    readonly id: string = `dialog-${uniqueId++}`
+  ) {
     // Se a caixa de diálogo tiver um pano de fundo, lide com os cliques.
     if (_containerInstance._config.hasBackdrop) {
       _overlayRef.backdropClick().subscribe(() => {
@@ -47,10 +50,17 @@ export class DialogRef<T, R = any> {
     });
 
     // Fechar quando ocorrer um evento de tecla de escape
-    _overlayRef.keydownEvents()
-      .pipe(filter(event => {
-        return event.keyCode === ESCAPE && !this.disableClose && !hasModifierKey(event);
-      }))
+    _overlayRef
+      .keydownEvents()
+      .pipe(
+        filter(event => {
+          return (
+            event.keyCode === ESCAPE &&
+            !this.disableClose &&
+            !hasModifierKey(event)
+          );
+        })
+      )
       .subscribe(event => {
         event.preventDefault();
         this.close();
@@ -64,7 +74,7 @@ export class DialogRef<T, R = any> {
 
   /**
    * Feche a caixa de diálogo.
-   * @param dialogResult Resultado opcional para retornar ao abridor de diálogo.
+   * @param dialogResult Resultado opcional para retornar ao abridor de diálogo.
    */
   close(dialogResult?: R): void {
     this._result = dialogResult;
@@ -73,19 +83,23 @@ export class DialogRef<T, R = any> {
 
   /**
    * Atualiza a posição da caixa de diálogo.
-   * posição @param Nova posição da caixa de diálogo.
+   * posição @param Nova posição da caixa de diálogo.
    */
   updatePosition(position?: DialogPosition): this {
     let strategy = this._getPositionStrategy();
 
     if (position && (position.left || position.right)) {
-      position.left ? strategy.left(position.left) : strategy.right(position.right);
+      position.left
+        ? strategy.left(position.left)
+        : strategy.right(position.right);
     } else {
       strategy.centerHorizontally();
     }
 
     if (position && (position.top || position.bottom)) {
-      position.top ? strategy.top(position.top) : strategy.bottom(position.bottom);
+      position.top
+        ? strategy.top(position.top)
+        : strategy.bottom(position.bottom);
     } else {
       strategy.centerVertically();
     }
@@ -104,7 +118,7 @@ export class DialogRef<T, R = any> {
 
   /**
    * Atualiza a largura e a altura da caixa de diálogo, definidas, mín. E máx.
-   * @param size Novo tamanho para a sobreposição.
+   * @param size Novo tamanho para a sobreposição.
    */
   updateSize(size: OverlaySizeConfig): this {
     if (size.width) {
@@ -120,7 +134,8 @@ export class DialogRef<T, R = any> {
 
   /** Busca o objeto da estratégia de posição da referência de sobreposição. */
   private _getPositionStrategy(): GlobalPositionStrategy {
-    return this._overlayRef.getConfig().positionStrategy as GlobalPositionStrategy;
+    return this._overlayRef.getConfig()
+      .positionStrategy as GlobalPositionStrategy;
   }
 
   /** Obtém um observável que é emitido quando o diálogo começa a abrir. */

@@ -9,8 +9,6 @@ import { environment } from '../environments/environment';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,7 +18,7 @@ import { AppService } from './app.service';
     TypeOrmModule.forRoot(configuration().database),
     AccountApiAuthModule,
     AccountApiUsersModule,
-    AccountApiCompaniesModule,
+    AccountApiCompaniesModule
   ],
   controllers: [AppController],
   providers: [AppService]
