@@ -74,6 +74,12 @@ ng generate @schematics/angular:class --name=database/database --project=common-
 touch libs/common/util/browser/src/lib/database/databaase.config.ts
 ```
 
+## Common Ui Table
+```bash
+ng generate @nrwl/angular:library --name=table --style=scss --directory=common/ui --tags=common:ui
+
+ng generate @schematics/angular:component --name=table --project=common-ui-table --style=scss --export --viewEncapsulation=None
+```
 
 
 <!-- This project was generated using [Nx](https://nx.dev).

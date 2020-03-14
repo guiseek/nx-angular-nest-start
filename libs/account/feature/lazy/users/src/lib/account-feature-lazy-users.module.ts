@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AccountFeatureSharedDataAccessModule } from '@wws/account/feature/shared/data-access';
+import { CommonUiTableModule } from '@wws/common/ui/table';
 import { UsersContainer } from './users/users.container';
 
 @NgModule({
   imports: [
     CommonModule,
+    CommonUiTableModule,
     AccountFeatureSharedDataAccessModule,
     RouterModule.forChild([
       {

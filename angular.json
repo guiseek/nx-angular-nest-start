@@ -460,6 +460,38 @@
           }
         }
       }
+    },
+    "common-ui-table": {
+      "projectType": "library",
+      "root": "libs/common/ui/table",
+      "sourceRoot": "libs/common/ui/table/src",
+      "prefix": "wws",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/ui/table/tsconfig.lib.json",
+              "libs/common/ui/table/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/ui/table/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/ui/table/jest.config.js",
+            "tsConfig": "libs/common/ui/table/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/common/ui/table/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

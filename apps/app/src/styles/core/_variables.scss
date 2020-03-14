@@ -1,0 +1,16 @@
+// @import './palette';
+
+$primary: #41403e !default;
+$secondary: #0071de !default;
+
+$success: #86a361 !default;
+$warning: #ddcd45 !default;
+$danger: #a7342d !default;
+$muted: #868e96 !default;
+
+$primary-light: lighten($primary, 50%) !default;
+$secondary-light: lighten($secondary, 50%) !default;
+$success-light: lighten($success, 30%) !default;
+$warning-light: lighten($warning, 30%) !default;
+$danger-light: lighten($danger, 45%) !default;
+$muted-light: lighten($muted, 35%) !default;

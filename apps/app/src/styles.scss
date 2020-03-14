@@ -3,7 +3,9 @@
 @import '~@angular/cdk/overlay-prebuilt.css';
 
 @import 'styles/theme.scss';
+@import 'styles/core/mixins.scss';
 
+@import 'styles/tables.scss';
 @import 'styles/forms.scss';
 @import 'styles/fonts.scss';
 @import 'styles/buttons.scss';

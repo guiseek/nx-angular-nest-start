@@ -1,0 +1,16 @@
+$large-screen: 1200px !default;
+$medium-screen: 992px !default;
+$small-screen: 768px !default;
+$xsmall-screen: 480px !default;
+
+@mixin resp($max:null, $min:null) {
+  @if $max == large or $max == lg { $max: $large-screen; }
+  @if $max == medium or $max == md { $max: $medium-screen; }
+  @if $max == small or $max == sm { $max: $small-screen; }
+  @if $max == xsmall or $max == xs { $max: $xsmall-screen; }
+
+  @if ($min != null and $max != null) { @media only screen and (max-width: $max) and (min-width: $min) { @content; } }
+  @else if($max != null and $min == null) { @media only screen and (max-width: $max) { @content; } }
+  @else if($min != null and $max == null) { @media only screen and (min-width: $min) { @content; } }
+  @else { @error 'no matching size found';}
+}
