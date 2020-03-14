@@ -17,7 +17,20 @@
     "baseUrl": ".",
     "paths": {
       "@wws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@wws/account/feature/api": ["libs/account/feature/api/src/index.ts"]
+      "@wws/account/feature/api": ["libs/account/feature/api/src/index.ts"],
+      "@wws/shared/auth/auth-elements": [
+        "libs/shared/auth/auth-elements/src/index.ts"
+      ],
+      "@wws/account/feature/lazy/users": [
+        "libs/account/feature/lazy/users/src/index.ts"
+      ],
+      "@wws/account/feature/lazy/account": [
+        "libs/account/feature/lazy/account/src/index.ts"
+      ],
+      "@wws/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@wws/account/feature/shared/data-access": [
+        "libs/account/feature/shared/data-access/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
