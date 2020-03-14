@@ -1,4 +1,5 @@
-import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiTags } from '@nestjs/swagger';
 import { ChangePasswordDto } from '../../dtos/change-password.dto';
 import { CreateUserDto } from '../../dtos/create-user.dto';
@@ -17,16 +18,17 @@ export class UsersController {
       throw new BadRequestException(err.message);
     }
   }
+  @UseGuards(AuthGuard('jwt'))
   @Get()
-  get() {
-    return this.service.find();
-  }
+  get() { return this.service.find(); }
 
+  @UseGuards(AuthGuard('jwt'))
   @Delete(':id')
   delete(@Param('id') id: number) {
     return this.service.delete(id);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Put(':id/change-password')
   async changePassword(
     @Param('id') id: string,

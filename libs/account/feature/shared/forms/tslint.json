@@ -1,0 +1,10 @@
+{
+  "extends": "../../../../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "wwsForm", "camelCase"],
+    "component-selector": [true, "element", "wws-form", "kebab-case"]
+  },
+  "linterOptions": {
+    "exclude": ["!**/*"]
+  }
+}

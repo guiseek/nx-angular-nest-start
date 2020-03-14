@@ -25,4 +25,11 @@ export class HttpBackendService<T = any> {
     // if (!!criteria) Object.keys(criteria)
     return this.http.get<T[]>(`${ this.prefix }/${ this.endpoint }`);
   }
+
+  createOne(data: T) {
+    return this.http.post(`${ this.prefix }/${ this.endpoint }`, data);
+  }
+  updateOne(id: number, data: Partial<T>) {
+    return this.http.put(`${ this.prefix }/${ this.endpoint }/${ id }`, data);
+  }
 }

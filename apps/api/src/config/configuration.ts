@@ -11,6 +11,6 @@ export default () => ({
     database: process.env.DATABASE_NAME,
     entities: [],
     autoLoadEntities: true,
-    synchronize: true
+    synchronize: false
   } as TypeOrmModuleOptions
 });

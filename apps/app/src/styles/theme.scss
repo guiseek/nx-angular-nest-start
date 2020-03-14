@@ -90,8 +90,6 @@ body {
 }
 
 main {
-  margin-left: calc(var(--nav-width) + 0.5em);
-  // margin-right: 0.5em;
   padding: 1em;
   flex: 1;
   transition: margin 0.3s ease;
